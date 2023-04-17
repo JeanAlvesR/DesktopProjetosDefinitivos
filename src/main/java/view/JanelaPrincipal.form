@@ -9,20 +9,44 @@
             <Property name="text" type="java.lang.String" value="Iniciar"/>
           </Properties>
           <SubComponents>
-            <MenuItem class="javax.swing.JMenuItem" name="jMenuItemAbrir">
+            <Menu class="javax.swing.JMenu" name="jMenuAbrir">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Abrir"/>
               </Properties>
-            </MenuItem>
-            <MenuItem class="javax.swing.JMenuItem" name="jMenuItemSalvar">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Salvar"/>
-              </Properties>
-            </MenuItem>
+              <SubComponents>
+                <MenuItem class="javax.swing.JMenuItem" name="jMenuItemAbrirDiretor">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="Abrir Diretores"/>
+                  </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jMenuItemAbrirDiretorActionPerformed"/>
+                  </Events>
+                </MenuItem>
+                <MenuItem class="javax.swing.JMenuItem" name="jMenuItemAbrirProfessor">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="Abrir Professores"/>
+                  </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jMenuItemAbrirProfessorActionPerformed"/>
+                  </Events>
+                </MenuItem>
+                <MenuItem class="javax.swing.JMenuItem" name="jMenuItemAbrirAluno">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="Abrir Alunos"/>
+                  </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jMenuItemAbrirAlunoActionPerformed"/>
+                  </Events>
+                </MenuItem>
+              </SubComponents>
+            </Menu>
             <MenuItem class="javax.swing.JMenuItem" name="jMenuItemSair">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Sair"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jMenuItemSairActionPerformed"/>
+              </Events>
             </MenuItem>
           </SubComponents>
         </Menu>
@@ -34,7 +58,7 @@
   </Properties>
   <SyntheticProperties>
     <SyntheticProperty name="menuBar" type="java.lang.String" value="jMenuBar1"/>
-    <SyntheticProperty name="formSize" type="java.awt.Dimension" value="-84,-19,0,5,115,114,0,18,106,97,118,97,46,97,119,116,46,68,105,109,101,110,115,105,111,110,65,-114,-39,-41,-84,95,68,20,2,0,2,73,0,6,104,101,105,103,104,116,73,0,5,119,105,100,116,104,120,112,0,0,1,-12,0,0,2,-68"/>
+    <SyntheticProperty name="formSize" type="java.awt.Dimension" value="-84,-19,0,5,115,114,0,18,106,97,118,97,46,97,119,116,46,68,105,109,101,110,115,105,111,110,65,-114,-39,-41,-84,95,68,20,2,0,2,73,0,6,104,101,105,103,104,116,73,0,5,119,105,100,116,104,120,112,0,0,2,11,0,0,2,-58"/>
     <SyntheticProperty name="formSizePolicy" type="int" value="0"/>
     <SyntheticProperty name="generateSize" type="boolean" value="true"/>
     <SyntheticProperty name="generateCenter" type="boolean" value="true"/>
@@ -119,357 +143,11 @@
                 </Container>
               </SubComponents>
             </Container>
-            <Container class="javax.swing.JScrollPane" name="jScrollPaneCadastro">
+            <Container class="javax.swing.JScrollPane" name="jScrollPaneCRUD">
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
-                  <JTabbedPaneConstraints tabName="Cadastro">
-                    <Property name="tabTitle" type="java.lang.String" value="Cadastro"/>
-                  </JTabbedPaneConstraints>
-                </Constraint>
-              </Constraints>
-
-              <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
-              <SubComponents>
-                <Container class="javax.swing.JTabbedPane" name="jTabbedPaneCadastro">
-
-                  <Layout class="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout"/>
-                  <SubComponents>
-                    <Container class="javax.swing.JScrollPane" name="jScrollPaneDiretorCad">
-                      <Constraints>
-                        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
-                          <JTabbedPaneConstraints tabName="Diretor">
-                            <Property name="tabTitle" type="java.lang.String" value="Diretor"/>
-                          </JTabbedPaneConstraints>
-                        </Constraint>
-                      </Constraints>
-
-                      <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
-                      <SubComponents>
-                        <Container class="javax.swing.JPanel" name="jPanelCadDiretor">
-
-                          <Layout>
-                            <DimensionLayout dim="0">
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="102" attributes="0">
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Group type="102" alignment="0" attributes="0">
-                                              <EmptySpace min="-2" pref="64" max="-2" attributes="0"/>
-                                              <Group type="103" groupAlignment="0" attributes="0">
-                                                  <Component id="jLabel6" alignment="0" min="-2" max="-2" attributes="0"/>
-                                                  <Component id="jLabel9" alignment="0" min="-2" max="-2" attributes="0"/>
-                                              </Group>
-                                              <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
-                                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                                  <Component id="cxNomeDirCad" pref="240" max="32767" attributes="0"/>
-                                                  <Component id="cxCpfDirCad" max="32767" attributes="0"/>
-                                              </Group>
-                                          </Group>
-                                          <Group type="102" alignment="0" attributes="0">
-                                              <EmptySpace min="-2" pref="215" max="-2" attributes="0"/>
-                                              <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
-                                          </Group>
-                                      </Group>
-                                      <EmptySpace pref="330" max="32767" attributes="0"/>
-                                  </Group>
-                                  <Group type="102" alignment="1" attributes="0">
-                                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                                      <Component id="btCadDir" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace min="-2" pref="177" max="-2" attributes="0"/>
-                                  </Group>
-                              </Group>
-                            </DimensionLayout>
-                            <DimensionLayout dim="1">
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <EmptySpace min="-2" pref="51" max="-2" attributes="0"/>
-                                      <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace min="-2" pref="89" max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="3" attributes="0">
-                                          <Component id="jLabel6" alignment="3" min="-2" max="-2" attributes="0"/>
-                                          <Component id="cxNomeDirCad" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      </Group>
-                                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="3" attributes="0">
-                                          <Component id="jLabel9" alignment="3" min="-2" max="-2" attributes="0"/>
-                                          <Component id="cxCpfDirCad" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      </Group>
-                                      <EmptySpace min="-2" pref="81" max="-2" attributes="0"/>
-                                      <Component id="btCadDir" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace pref="103" max="32767" attributes="0"/>
-                                  </Group>
-                              </Group>
-                            </DimensionLayout>
-                          </Layout>
-                          <SubComponents>
-                            <Component class="javax.swing.JLabel" name="jLabel5">
-                              <Properties>
-                                <Property name="text" type="java.lang.String" value="CADASTRO DE DIRETOR"/>
-                              </Properties>
-                            </Component>
-                            <Component class="javax.swing.JTextField" name="cxNomeDirCad">
-                            </Component>
-                            <Component class="javax.swing.JLabel" name="jLabel6">
-                              <Properties>
-                                <Property name="text" type="java.lang.String" value="Nome"/>
-                              </Properties>
-                            </Component>
-                            <Component class="javax.swing.JButton" name="btCadDir">
-                              <Properties>
-                                <Property name="text" type="java.lang.String" value="Cadastrar"/>
-                              </Properties>
-                            </Component>
-                            <Component class="javax.swing.JLabel" name="jLabel9">
-                              <Properties>
-                                <Property name="text" type="java.lang.String" value="CPF"/>
-                              </Properties>
-                            </Component>
-                            <Component class="javax.swing.JTextField" name="cxCpfDirCad">
-                            </Component>
-                          </SubComponents>
-                        </Container>
-                      </SubComponents>
-                    </Container>
-                    <Container class="javax.swing.JScrollPane" name="jScrollPaneProfessorCad">
-                      <Constraints>
-                        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
-                          <JTabbedPaneConstraints tabName="Professor">
-                            <Property name="tabTitle" type="java.lang.String" value="Professor"/>
-                          </JTabbedPaneConstraints>
-                        </Constraint>
-                      </Constraints>
-
-                      <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
-                      <SubComponents>
-                        <Container class="javax.swing.JPanel" name="jPanelCadProfessor">
-
-                          <Layout>
-                            <DimensionLayout dim="0">
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="102" attributes="0">
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Group type="102" attributes="0">
-                                              <EmptySpace min="-2" pref="64" max="-2" attributes="0"/>
-                                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                                  <Group type="102" attributes="0">
-                                                      <Component id="jLabel21" min="-2" max="-2" attributes="0"/>
-                                                      <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
-                                                      <Component id="cxDisciplinaProfCad" pref="260" max="32767" attributes="0"/>
-                                                  </Group>
-                                                  <Group type="102" alignment="0" attributes="0">
-                                                      <Group type="103" groupAlignment="0" attributes="0">
-                                                          <Component id="jLabel2" alignment="0" min="-2" max="-2" attributes="0"/>
-                                                          <Component id="jLabel8" alignment="0" min="-2" max="-2" attributes="0"/>
-                                                      </Group>
-                                                      <EmptySpace min="-2" pref="41" max="-2" attributes="0"/>
-                                                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                                          <Component id="cxNomeProfCad" pref="260" max="32767" attributes="0"/>
-                                                          <Component id="cxCpfProfCad" max="32767" attributes="0"/>
-                                                      </Group>
-                                                  </Group>
-                                              </Group>
-                                          </Group>
-                                          <Group type="102" alignment="0" attributes="0">
-                                              <EmptySpace min="-2" pref="208" max="-2" attributes="0"/>
-                                              <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
-                                          </Group>
-                                      </Group>
-                                      <EmptySpace pref="292" max="32767" attributes="0"/>
-                                  </Group>
-                                  <Group type="102" alignment="1" attributes="0">
-                                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                                      <Component id="btCadProf" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace min="-2" pref="149" max="-2" attributes="0"/>
-                                  </Group>
-                              </Group>
-                            </DimensionLayout>
-                            <DimensionLayout dim="1">
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <EmptySpace min="-2" pref="55" max="-2" attributes="0"/>
-                                      <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace min="-2" pref="85" max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="3" attributes="0">
-                                          <Component id="jLabel2" alignment="3" min="-2" max="-2" attributes="0"/>
-                                          <Component id="cxNomeProfCad" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      </Group>
-                                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="3" attributes="0">
-                                          <Component id="jLabel8" alignment="3" min="-2" max="-2" attributes="0"/>
-                                          <Component id="cxCpfProfCad" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      </Group>
-                                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="3" attributes="0">
-                                          <Component id="jLabel21" alignment="3" min="-2" max="-2" attributes="0"/>
-                                          <Component id="cxDisciplinaProfCad" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      </Group>
-                                      <EmptySpace min="-2" pref="65" max="-2" attributes="0"/>
-                                      <Component id="btCadProf" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace pref="79" max="32767" attributes="0"/>
-                                  </Group>
-                              </Group>
-                            </DimensionLayout>
-                          </Layout>
-                          <SubComponents>
-                            <Component class="javax.swing.JLabel" name="jLabel2">
-                              <Properties>
-                                <Property name="text" type="java.lang.String" value="Nome"/>
-                              </Properties>
-                            </Component>
-                            <Component class="javax.swing.JLabel" name="jLabel4">
-                              <Properties>
-                                <Property name="text" type="java.lang.String" value="CADASTRO DE PROFESSOR"/>
-                              </Properties>
-                            </Component>
-                            <Component class="javax.swing.JTextField" name="cxNomeProfCad">
-                            </Component>
-                            <Component class="javax.swing.JButton" name="btCadProf">
-                              <Properties>
-                                <Property name="text" type="java.lang.String" value="Cadastrar"/>
-                              </Properties>
-                            </Component>
-                            <Component class="javax.swing.JLabel" name="jLabel8">
-                              <Properties>
-                                <Property name="text" type="java.lang.String" value="CPF"/>
-                              </Properties>
-                            </Component>
-                            <Component class="javax.swing.JTextField" name="cxCpfProfCad">
-                            </Component>
-                            <Component class="javax.swing.JLabel" name="jLabel21">
-                              <Properties>
-                                <Property name="text" type="java.lang.String" value="Disciplina"/>
-                              </Properties>
-                            </Component>
-                            <Component class="javax.swing.JTextField" name="cxDisciplinaProfCad">
-                            </Component>
-                          </SubComponents>
-                        </Container>
-                      </SubComponents>
-                    </Container>
-                    <Container class="javax.swing.JScrollPane" name="jScrollPaneAlunoCad">
-                      <Constraints>
-                        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
-                          <JTabbedPaneConstraints tabName="Aluno">
-                            <Property name="tabTitle" type="java.lang.String" value="Aluno"/>
-                          </JTabbedPaneConstraints>
-                        </Constraint>
-                      </Constraints>
-
-                      <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
-                      <SubComponents>
-                        <Container class="javax.swing.JPanel" name="jPanelAluno">
-
-                          <Layout>
-                            <DimensionLayout dim="0">
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="102" attributes="0">
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Group type="102" alignment="0" attributes="0">
-                                              <EmptySpace min="-2" pref="64" max="-2" attributes="0"/>
-                                              <Group type="103" groupAlignment="0" attributes="0">
-                                                  <Group type="102" attributes="0">
-                                                      <Component id="jLabel22" min="-2" max="-2" attributes="0"/>
-                                                      <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
-                                                      <Component id="cxTurmaAlunoCad1" pref="239" max="32767" attributes="0"/>
-                                                  </Group>
-                                                  <Group type="102" alignment="0" attributes="0">
-                                                      <Group type="103" groupAlignment="0" attributes="0">
-                                                          <Component id="jLabel11" alignment="0" min="-2" max="-2" attributes="0"/>
-                                                          <Component id="jLabel13" alignment="0" min="-2" max="-2" attributes="0"/>
-                                                      </Group>
-                                                      <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
-                                                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                                          <Component id="cxNomeAlunoCad" pref="240" max="32767" attributes="0"/>
-                                                          <Component id="cxRaAlunoCad" max="32767" attributes="0"/>
-                                                      </Group>
-                                                  </Group>
-                                              </Group>
-                                          </Group>
-                                          <Group type="102" alignment="0" attributes="0">
-                                              <EmptySpace min="-2" pref="219" max="-2" attributes="0"/>
-                                              <Component id="jLabel10" min="-2" max="-2" attributes="0"/>
-                                          </Group>
-                                      </Group>
-                                      <EmptySpace min="-2" pref="330" max="-2" attributes="0"/>
-                                  </Group>
-                                  <Group type="102" alignment="1" attributes="0">
-                                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                                      <Component id="btCadAluno" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace min="-2" pref="179" max="-2" attributes="0"/>
-                                  </Group>
-                              </Group>
-                            </DimensionLayout>
-                            <DimensionLayout dim="1">
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <EmptySpace min="-2" pref="60" max="-2" attributes="0"/>
-                                      <Component id="jLabel10" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace min="-2" pref="80" max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="3" attributes="0">
-                                          <Component id="jLabel11" alignment="3" min="-2" max="-2" attributes="0"/>
-                                          <Component id="cxNomeAlunoCad" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      </Group>
-                                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="3" attributes="0">
-                                          <Component id="jLabel13" alignment="3" min="-2" max="-2" attributes="0"/>
-                                          <Component id="cxRaAlunoCad" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      </Group>
-                                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="3" attributes="0">
-                                          <Component id="jLabel22" alignment="3" min="-2" max="-2" attributes="0"/>
-                                          <Component id="cxTurmaAlunoCad1" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      </Group>
-                                      <EmptySpace pref="75" max="32767" attributes="0"/>
-                                      <Component id="btCadAluno" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace min="-2" pref="69" max="-2" attributes="0"/>
-                                  </Group>
-                              </Group>
-                            </DimensionLayout>
-                          </Layout>
-                          <SubComponents>
-                            <Component class="javax.swing.JLabel" name="jLabel10">
-                              <Properties>
-                                <Property name="text" type="java.lang.String" value="CADASTRO DE ALUNO"/>
-                              </Properties>
-                            </Component>
-                            <Component class="javax.swing.JTextField" name="cxNomeAlunoCad">
-                            </Component>
-                            <Component class="javax.swing.JLabel" name="jLabel11">
-                              <Properties>
-                                <Property name="text" type="java.lang.String" value="Nome"/>
-                              </Properties>
-                            </Component>
-                            <Component class="javax.swing.JLabel" name="jLabel13">
-                              <Properties>
-                                <Property name="text" type="java.lang.String" value="RA"/>
-                              </Properties>
-                            </Component>
-                            <Component class="javax.swing.JTextField" name="cxRaAlunoCad">
-                            </Component>
-                            <Component class="javax.swing.JButton" name="btCadAluno">
-                              <Properties>
-                                <Property name="text" type="java.lang.String" value="Cadastrar"/>
-                              </Properties>
-                            </Component>
-                            <Component class="javax.swing.JTextField" name="cxTurmaAlunoCad1">
-                            </Component>
-                            <Component class="javax.swing.JLabel" name="jLabel22">
-                              <Properties>
-                                <Property name="text" type="java.lang.String" value="Turma"/>
-                              </Properties>
-                            </Component>
-                          </SubComponents>
-                        </Container>
-                      </SubComponents>
-                    </Container>
-                  </SubComponents>
-                </Container>
-              </SubComponents>
-            </Container>
-            <Container class="javax.swing.JScrollPane" name="jScrollPaneConsulta">
-              <Constraints>
-                <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
-                  <JTabbedPaneConstraints tabName="Consulta">
-                    <Property name="tabTitle" type="java.lang.String" value="Consulta"/>
+                  <JTabbedPaneConstraints tabName="CRUD">
+                    <Property name="tabTitle" type="java.lang.String" value="CRUD"/>
                   </JTabbedPaneConstraints>
                 </Constraint>
               </Constraints>
@@ -507,25 +185,29 @@
                                               <Group type="103" groupAlignment="0" attributes="0">
                                                   <Component id="jLabel12" alignment="0" min="-2" max="-2" attributes="0"/>
                                                   <Component id="jLabel14" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
                                               </Group>
-                                              <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
+                                              <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
                                               <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                                  <Component id="cxNomeDirCons" pref="161" max="32767" attributes="0"/>
-                                                  <Component id="cxCpfDirCons" max="32767" attributes="0"/>
+                                                  <Component id="cxIdDir" max="32767" attributes="0"/>
+                                                  <Component id="cxNomeDir" pref="161" max="32767" attributes="0"/>
+                                                  <Component id="cxCpfDir" max="32767" attributes="0"/>
                                               </Group>
                                           </Group>
                                           <Group type="102" alignment="0" attributes="0">
-                                              <EmptySpace min="-2" pref="108" max="-2" attributes="0"/>
+                                              <EmptySpace min="-2" pref="59" max="-2" attributes="0"/>
                                               <Component id="btListarDir" min="-2" max="-2" attributes="0"/>
-                                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                                              <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
                                               <Component id="btConsDir" min="-2" max="-2" attributes="0"/>
-                                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                                              <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
                                               <Component id="btAlterarDir" min="-2" max="-2" attributes="0"/>
-                                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                                              <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
                                               <Component id="btDeletarDir" min="-2" max="-2" attributes="0"/>
+                                              <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
+                                              <Component id="btCadDir" min="-2" max="-2" attributes="0"/>
                                           </Group>
                                       </Group>
-                                      <EmptySpace pref="238" max="32767" attributes="0"/>
+                                      <EmptySpace pref="178" max="32767" attributes="0"/>
                                   </Group>
                               </Group>
                             </DimensionLayout>
@@ -535,23 +217,31 @@
                                       <EmptySpace min="-2" pref="51" max="-2" attributes="0"/>
                                       <Component id="jLabel7" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace min="-2" pref="117" max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="3" attributes="0">
-                                          <Component id="jLabel12" alignment="3" min="-2" max="-2" attributes="0"/>
-                                          <Component id="cxNomeDirCons" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      </Group>
-                                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="jLabel14" min="-2" max="-2" attributes="0"/>
-                                          <Component id="cxCpfDirCons" min="-2" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="1" attributes="0">
+                                          <Group type="102" attributes="0">
+                                              <Group type="103" groupAlignment="3" attributes="0">
+                                                  <Component id="jLabel12" alignment="3" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="cxNomeDir" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              </Group>
+                                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                                              <Group type="103" groupAlignment="0" attributes="0">
+                                                  <Component id="jLabel14" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="cxCpfDir" min="-2" max="-2" attributes="0"/>
+                                              </Group>
+                                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                              <Component id="cxIdDir" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                          <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                       <EmptySpace min="-2" pref="52" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="3" attributes="0">
+                                          <Component id="btListarDir" alignment="3" min="-2" max="-2" attributes="0"/>
                                           <Component id="btConsDir" alignment="3" min="-2" max="-2" attributes="0"/>
                                           <Component id="btAlterarDir" alignment="3" min="-2" max="-2" attributes="0"/>
                                           <Component id="btDeletarDir" alignment="3" min="-2" max="-2" attributes="0"/>
-                                          <Component id="btListarDir" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="btCadDir" alignment="3" min="-2" max="-2" attributes="0"/>
                                       </Group>
-                                      <EmptySpace pref="111" max="32767" attributes="0"/>
+                                      <EmptySpace pref="88" max="32767" attributes="0"/>
                                   </Group>
                               </Group>
                             </DimensionLayout>
@@ -562,11 +252,8 @@
                                 <Property name="text" type="java.lang.String" value="CONSULTA DE DIRETOR"/>
                               </Properties>
                             </Component>
-                            <Component class="javax.swing.JTextField" name="cxNomeDirCons">
+                            <Component class="javax.swing.JTextField" name="cxNomeDir">
                               <Properties>
-                                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                                  <Color blue="ff" green="ff" red="ff" type="rgb"/>
-                                </Property>
                                 <Property name="disabledTextColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
                                 </Property>
@@ -581,27 +268,54 @@
                               <Properties>
                                 <Property name="text" type="java.lang.String" value="Consultar"/>
                               </Properties>
+                              <Events>
+                                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btConsDirActionPerformed"/>
+                              </Events>
                             </Component>
                             <Component class="javax.swing.JLabel" name="jLabel14">
                               <Properties>
                                 <Property name="text" type="java.lang.String" value="CPF"/>
                               </Properties>
                             </Component>
-                            <Component class="javax.swing.JTextField" name="cxCpfDirCons">
+                            <Component class="javax.swing.JTextField" name="cxCpfDir">
                             </Component>
                             <Component class="javax.swing.JButton" name="btAlterarDir">
                               <Properties>
                                 <Property name="text" type="java.lang.String" value="Alterar"/>
                               </Properties>
+                              <Events>
+                                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btAlterarDirActionPerformed"/>
+                              </Events>
                             </Component>
                             <Component class="javax.swing.JButton" name="btDeletarDir">
                               <Properties>
                                 <Property name="text" type="java.lang.String" value="Deletar"/>
                               </Properties>
+                              <Events>
+                                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btDeletarDirActionPerformed"/>
+                              </Events>
                             </Component>
                             <Component class="javax.swing.JButton" name="btListarDir">
                               <Properties>
                                 <Property name="text" type="java.lang.String" value="Listar Diretores"/>
+                              </Properties>
+                              <Events>
+                                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btListarDirActionPerformed"/>
+                              </Events>
+                            </Component>
+                            <Component class="javax.swing.JButton" name="btCadDir">
+                              <Properties>
+                                <Property name="text" type="java.lang.String" value="Cadastrar"/>
+                              </Properties>
+                              <Events>
+                                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btCadDirActionPerformed"/>
+                              </Events>
+                            </Component>
+                            <Component class="javax.swing.JTextField" name="cxIdDir">
+                            </Component>
+                            <Component class="javax.swing.JLabel" name="jLabel4">
+                              <Properties>
+                                <Property name="text" type="java.lang.String" value="ID"/>
                               </Properties>
                             </Component>
                           </SubComponents>
@@ -626,42 +340,55 @@
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="102" attributes="0">
                                       <Group type="103" groupAlignment="0" attributes="0">
-                                          <Group type="102" alignment="0" attributes="0">
-                                              <EmptySpace min="-2" pref="73" max="-2" attributes="0"/>
-                                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                                  <Group type="102" attributes="0">
-                                                      <Component id="jLabel16" min="-2" max="-2" attributes="0"/>
-                                                      <EmptySpace pref="37" max="32767" attributes="0"/>
-                                                      <Component id="cxNomeProfessorCons" min="-2" pref="161" max="-2" attributes="0"/>
-                                                  </Group>
-                                                  <Group type="102" attributes="0">
-                                                      <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
-                                                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                                                      <Component id="cxDisciplinaProfessorCons" max="32767" attributes="0"/>
-                                                  </Group>
-                                                  <Group type="102" alignment="0" attributes="0">
-                                                      <Component id="jLabel17" min="-2" max="-2" attributes="0"/>
-                                                      <EmptySpace max="32767" attributes="0"/>
-                                                      <Component id="cxCpfProfessorCons" min="-2" pref="161" max="-2" attributes="0"/>
-                                                  </Group>
-                                              </Group>
-                                          </Group>
-                                          <Group type="102" alignment="0" attributes="0">
-                                              <EmptySpace min="-2" pref="113" max="-2" attributes="0"/>
-                                              <Component id="btListarProfessor" min="-2" max="-2" attributes="0"/>
-                                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                                              <Component id="btConsProfessor" min="-2" max="-2" attributes="0"/>
-                                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                                              <Component id="btAlterarProfessor" min="-2" max="-2" attributes="0"/>
-                                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                                              <Component id="btDeletarProfessor" min="-2" max="-2" attributes="0"/>
-                                          </Group>
-                                          <Group type="102" alignment="0" attributes="0">
+                                          <Group type="102" attributes="0">
                                               <EmptySpace min="-2" pref="215" max="-2" attributes="0"/>
                                               <Component id="jLabel15" min="-2" max="-2" attributes="0"/>
                                           </Group>
+                                          <Group type="102" alignment="0" attributes="0">
+                                              <EmptySpace min="-2" pref="60" max="-2" attributes="0"/>
+                                              <Group type="103" groupAlignment="0" attributes="0">
+                                                  <Group type="102" alignment="0" attributes="0">
+                                                      <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
+                                                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                                          <Group type="102" alignment="0" attributes="0">
+                                                              <Component id="jLabel16" min="-2" max="-2" attributes="0"/>
+                                                              <EmptySpace pref="37" max="32767" attributes="0"/>
+                                                              <Component id="cxNomeProfessor" min="-2" pref="161" max="-2" attributes="0"/>
+                                                          </Group>
+                                                          <Group type="102" alignment="0" attributes="0">
+                                                              <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
+                                                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                                                              <Component id="cxDisciplinaProfessor" max="32767" attributes="0"/>
+                                                          </Group>
+                                                          <Group type="102" alignment="1" attributes="0">
+                                                              <Group type="103" groupAlignment="0" attributes="0">
+                                                                  <Component id="jLabel17" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                                  <Component id="jLabel2" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                              </Group>
+                                                              <EmptySpace max="32767" attributes="0"/>
+                                                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                                                  <Component id="cxCpfProfessor" min="-2" pref="161" max="-2" attributes="0"/>
+                                                                  <Component id="cxIdProfessor" min="-2" pref="161" max="-2" attributes="0"/>
+                                                              </Group>
+                                                          </Group>
+                                                      </Group>
+                                                      <EmptySpace pref="218" max="-2" attributes="0"/>
+                                                  </Group>
+                                                  <Group type="102" alignment="1" attributes="0">
+                                                      <Component id="btListarProfessor" min="-2" max="-2" attributes="0"/>
+                                                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                                                      <Component id="btConsProfessor" min="-2" max="-2" attributes="0"/>
+                                                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                                                      <Component id="btAlterarProfessor" min="-2" max="-2" attributes="0"/>
+                                                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                                                      <Component id="btDeletarProfessor" min="-2" max="-2" attributes="0"/>
+                                                      <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
+                                                      <Component id="brCadProfessor" min="-2" max="-2" attributes="0"/>
+                                                  </Group>
+                                              </Group>
+                                          </Group>
                                       </Group>
-                                      <EmptySpace pref="220" max="32767" attributes="0"/>
+                                      <EmptySpace pref="202" max="32767" attributes="0"/>
                                   </Group>
                               </Group>
                             </DimensionLayout>
@@ -670,29 +397,35 @@
                                   <Group type="102" alignment="0" attributes="0">
                                       <EmptySpace min="-2" pref="51" max="-2" attributes="0"/>
                                       <Component id="jLabel15" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace min="-2" pref="117" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="73" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="3" attributes="0">
                                           <Component id="jLabel16" alignment="3" min="-2" max="-2" attributes="0"/>
-                                          <Component id="cxNomeProfessorCons" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="cxNomeProfessor" alignment="3" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                       <EmptySpace type="separate" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="3" attributes="0">
-                                          <Component id="cxDisciplinaProfessorCons" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="cxDisciplinaProfessor" alignment="3" min="-2" max="-2" attributes="0"/>
                                           <Component id="jLabel3" alignment="3" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                       <EmptySpace type="separate" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="3" attributes="0">
                                           <Component id="jLabel17" alignment="3" min="-2" max="-2" attributes="0"/>
-                                          <Component id="cxCpfProfessorCons" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="cxCpfProfessor" alignment="3" min="-2" max="-2" attributes="0"/>
                                       </Group>
-                                      <EmptySpace pref="46" max="32767" attributes="0"/>
+                                      <EmptySpace type="separate" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="3" attributes="0">
-                                          <Component id="btConsProfessor" alignment="3" min="-2" max="-2" attributes="0"/>
-                                          <Component id="btAlterarProfessor" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="jLabel2" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="cxIdProfessor" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                      <EmptySpace pref="53" max="32767" attributes="0"/>
+                                      <Group type="103" groupAlignment="3" attributes="0">
+                                          <Component id="brCadProfessor" alignment="3" min="-2" max="-2" attributes="0"/>
                                           <Component id="btDeletarProfessor" alignment="3" min="-2" max="-2" attributes="0"/>
                                           <Component id="btListarProfessor" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="btConsProfessor" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="btAlterarProfessor" alignment="3" min="-2" max="-2" attributes="0"/>
                                       </Group>
-                                      <EmptySpace min="-2" pref="77" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="85" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
                             </DimensionLayout>
@@ -700,14 +433,11 @@
                           <SubComponents>
                             <Component class="javax.swing.JLabel" name="jLabel15">
                               <Properties>
-                                <Property name="text" type="java.lang.String" value="CONSULTA DE ALUNO"/>
+                                <Property name="text" type="java.lang.String" value="CONSULTA DE PROFESSOR"/>
                               </Properties>
                             </Component>
-                            <Component class="javax.swing.JTextField" name="cxNomeProfessorCons">
+                            <Component class="javax.swing.JTextField" name="cxNomeProfessor">
                               <Properties>
-                                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                                  <Color blue="ff" green="ff" red="ff" type="rgb"/>
-                                </Property>
                                 <Property name="disabledTextColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
                                 </Property>
@@ -722,38 +452,65 @@
                               <Properties>
                                 <Property name="text" type="java.lang.String" value="Consultar"/>
                               </Properties>
+                              <Events>
+                                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btConsProfessorActionPerformed"/>
+                              </Events>
                             </Component>
                             <Component class="javax.swing.JLabel" name="jLabel17">
                               <Properties>
                                 <Property name="text" type="java.lang.String" value="CPF"/>
                               </Properties>
                             </Component>
-                            <Component class="javax.swing.JTextField" name="cxCpfProfessorCons">
+                            <Component class="javax.swing.JTextField" name="cxCpfProfessor">
                               <Events>
-                                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cxCpfProfessorConsActionPerformed"/>
+                                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cxCpfProfessorActionPerformed"/>
                               </Events>
                             </Component>
                             <Component class="javax.swing.JButton" name="btAlterarProfessor">
                               <Properties>
                                 <Property name="text" type="java.lang.String" value="Alterar"/>
                               </Properties>
+                              <Events>
+                                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btAlterarProfessorActionPerformed"/>
+                              </Events>
                             </Component>
                             <Component class="javax.swing.JButton" name="btDeletarProfessor">
                               <Properties>
                                 <Property name="text" type="java.lang.String" value="Deletar"/>
                               </Properties>
+                              <Events>
+                                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btDeletarProfessorActionPerformed"/>
+                              </Events>
                             </Component>
                             <Component class="javax.swing.JButton" name="btListarProfessor">
                               <Properties>
                                 <Property name="text" type="java.lang.String" value="Listar Professores"/>
                               </Properties>
+                              <Events>
+                                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btListarProfessorActionPerformed"/>
+                              </Events>
                             </Component>
                             <Component class="javax.swing.JLabel" name="jLabel3">
                               <Properties>
                                 <Property name="text" type="java.lang.String" value="Disciplina"/>
                               </Properties>
                             </Component>
-                            <Component class="javax.swing.JTextField" name="cxDisciplinaProfessorCons">
+                            <Component class="javax.swing.JTextField" name="cxDisciplinaProfessor">
+                            </Component>
+                            <Component class="javax.swing.JButton" name="brCadProfessor">
+                              <Properties>
+                                <Property name="text" type="java.lang.String" value="Cadastrar"/>
+                              </Properties>
+                              <Events>
+                                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="brCadProfessorActionPerformed"/>
+                              </Events>
+                            </Component>
+                            <Component class="javax.swing.JLabel" name="jLabel2">
+                              <Properties>
+                                <Property name="text" type="java.lang.String" value="ID"/>
+                              </Properties>
+                            </Component>
+                            <Component class="javax.swing.JTextField" name="cxIdProfessor">
                             </Component>
                           </SubComponents>
                         </Container>
@@ -792,7 +549,7 @@
                                                       <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
                                                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
                                                           <Component id="cxNomeAlunoCons" pref="218" max="32767" attributes="0"/>
-                                                          <Component id="cxRaAlunoCons" max="32767" attributes="0"/>
+                                                          <Component id="cxIdAlunoCons" max="32767" attributes="0"/>
                                                       </Group>
                                                   </Group>
                                                   <Group type="102" attributes="0">
@@ -803,17 +560,19 @@
                                               </Group>
                                           </Group>
                                           <Group type="102" alignment="0" attributes="0">
-                                              <EmptySpace min="-2" pref="114" max="-2" attributes="0"/>
+                                              <EmptySpace min="-2" pref="65" max="-2" attributes="0"/>
                                               <Component id="btListarAlunos" min="-2" max="-2" attributes="0"/>
-                                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                                              <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
                                               <Component id="btConsAluno" min="-2" max="-2" attributes="0"/>
-                                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                                              <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
                                               <Component id="btAlterarAluno" min="-2" max="-2" attributes="0"/>
-                                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                                              <EmptySpace min="-2" pref="43" max="-2" attributes="0"/>
                                               <Component id="btDeletarAluno" min="-2" max="-2" attributes="0"/>
+                                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                                              <Component id="jButtonCadAluno" min="-2" max="-2" attributes="0"/>
                                           </Group>
                                       </Group>
-                                      <EmptySpace pref="242" max="32767" attributes="0"/>
+                                      <EmptySpace pref="182" max="32767" attributes="0"/>
                                   </Group>
                               </Group>
                             </DimensionLayout>
@@ -835,7 +594,7 @@
                                       <EmptySpace type="separate" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="0" attributes="0">
                                           <Component id="jLabel20" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          <Component id="cxRaAlunoCons" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="cxIdAlunoCons" alignment="0" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                       <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="3" attributes="0">
@@ -843,8 +602,9 @@
                                           <Component id="btAlterarAluno" alignment="3" min="-2" max="-2" attributes="0"/>
                                           <Component id="btDeletarAluno" alignment="3" min="-2" max="-2" attributes="0"/>
                                           <Component id="btListarAlunos" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="jButtonCadAluno" alignment="3" min="-2" max="-2" attributes="0"/>
                                       </Group>
-                                      <EmptySpace pref="78" max="32767" attributes="0"/>
+                                      <EmptySpace pref="89" max="32767" attributes="0"/>
                                   </Group>
                               </Group>
                             </DimensionLayout>
@@ -852,14 +612,11 @@
                           <SubComponents>
                             <Component class="javax.swing.JLabel" name="jLabel18">
                               <Properties>
-                                <Property name="text" type="java.lang.String" value="CONSULTA DE DIRETOR"/>
+                                <Property name="text" type="java.lang.String" value="CONSULTA DE ALUNO"/>
                               </Properties>
                             </Component>
                             <Component class="javax.swing.JTextField" name="cxNomeAlunoCons">
                               <Properties>
-                                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                                  <Color blue="ff" green="ff" red="ff" type="rgb"/>
-                                </Property>
                                 <Property name="disabledTextColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
                                 </Property>
@@ -874,33 +631,40 @@
                               <Properties>
                                 <Property name="text" type="java.lang.String" value="Consultar"/>
                               </Properties>
+                              <Events>
+                                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btConsAlunoActionPerformed"/>
+                              </Events>
                             </Component>
                             <Component class="javax.swing.JLabel" name="jLabel20">
                               <Properties>
-                                <Property name="text" type="java.lang.String" value="RA"/>
+                                <Property name="text" type="java.lang.String" value="ID"/>
                               </Properties>
                             </Component>
-                            <Component class="javax.swing.JTextField" name="cxRaAlunoCons">
-                              <Properties>
-                                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                                  <Color blue="ff" green="ff" red="ff" type="rgb"/>
-                                </Property>
-                              </Properties>
+                            <Component class="javax.swing.JTextField" name="cxIdAlunoCons">
                             </Component>
                             <Component class="javax.swing.JButton" name="btAlterarAluno">
                               <Properties>
                                 <Property name="text" type="java.lang.String" value="Alterar"/>
                               </Properties>
+                              <Events>
+                                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btAlterarAlunoActionPerformed"/>
+                              </Events>
                             </Component>
                             <Component class="javax.swing.JButton" name="btDeletarAluno">
                               <Properties>
                                 <Property name="text" type="java.lang.String" value="Deletar"/>
                               </Properties>
+                              <Events>
+                                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btDeletarAlunoActionPerformed"/>
+                              </Events>
                             </Component>
                             <Component class="javax.swing.JButton" name="btListarAlunos">
                               <Properties>
                                 <Property name="text" type="java.lang.String" value="Listar Alunos"/>
                               </Properties>
+                              <Events>
+                                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btListarAlunosActionPerformed"/>
+                              </Events>
                             </Component>
                             <Component class="javax.swing.JLabel" name="jLabel23">
                               <Properties>
@@ -908,11 +672,14 @@
                               </Properties>
                             </Component>
                             <Component class="javax.swing.JTextField" name="cxTurmaAlunoCons">
+                            </Component>
+                            <Component class="javax.swing.JButton" name="jButtonCadAluno">
                               <Properties>
-                                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                                  <Color blue="ff" green="ff" red="ff" type="rgb"/>
-                                </Property>
+                                <Property name="text" type="java.lang.String" value="Cadastrar"/>
                               </Properties>
+                              <Events>
+                                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonCadAlunoActionPerformed"/>
+                              </Events>
                             </Component>
                           </SubComponents>
                         </Container>

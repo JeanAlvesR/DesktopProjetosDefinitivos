@@ -4,15 +4,26 @@
  */
 package view;
 
+import controller.*;
+
+import javax.swing.JOptionPane;
+import model.Aluno;
+import model.Diretor;
+import model.Professor;
+
 /**
  *
- * @author jeana
+ * @author Jean
  */
 public class JanelaPrincipal extends javax.swing.JFrame {
 
     /**
      * Creates new form JanelaPrincipal
      */
+    ControllerArquivoTextoAluno controllerAluno = new ControllerArquivoTextoAluno();
+    ControllerArquivoTextoProfessor CP = new ControllerArquivoTextoProfessor();
+    ControllerArquivoTextoDiretor CD = new ControllerArquivoTextoDiretor();
+
     public JanelaPrincipal() {
         initComponents();
     }
@@ -31,62 +42,38 @@ public class JanelaPrincipal extends javax.swing.JFrame {
         jScrollPanePrincipal = new javax.swing.JScrollPane();
         jPanelPrincipal = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        jScrollPaneCadastro = new javax.swing.JScrollPane();
-        jTabbedPaneCadastro = new javax.swing.JTabbedPane();
-        jScrollPaneDiretorCad = new javax.swing.JScrollPane();
-        jPanelCadDiretor = new javax.swing.JPanel();
-        jLabel5 = new javax.swing.JLabel();
-        cxNomeDirCad = new javax.swing.JTextField();
-        jLabel6 = new javax.swing.JLabel();
-        btCadDir = new javax.swing.JButton();
-        jLabel9 = new javax.swing.JLabel();
-        cxCpfDirCad = new javax.swing.JTextField();
-        jScrollPaneProfessorCad = new javax.swing.JScrollPane();
-        jPanelCadProfessor = new javax.swing.JPanel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        cxNomeProfCad = new javax.swing.JTextField();
-        btCadProf = new javax.swing.JButton();
-        jLabel8 = new javax.swing.JLabel();
-        cxCpfProfCad = new javax.swing.JTextField();
-        jLabel21 = new javax.swing.JLabel();
-        cxDisciplinaProfCad = new javax.swing.JTextField();
-        jScrollPaneAlunoCad = new javax.swing.JScrollPane();
-        jPanelAluno = new javax.swing.JPanel();
-        jLabel10 = new javax.swing.JLabel();
-        cxNomeAlunoCad = new javax.swing.JTextField();
-        jLabel11 = new javax.swing.JLabel();
-        jLabel13 = new javax.swing.JLabel();
-        cxRaAlunoCad = new javax.swing.JTextField();
-        btCadAluno = new javax.swing.JButton();
-        cxTurmaAlunoCad1 = new javax.swing.JTextField();
-        jLabel22 = new javax.swing.JLabel();
-        jScrollPaneConsulta = new javax.swing.JScrollPane();
+        jScrollPaneCRUD = new javax.swing.JScrollPane();
         jTabbedPane2 = new javax.swing.JTabbedPane();
         jScrollPaneDiretorCons = new javax.swing.JScrollPane();
         jPanelCadDiretor1 = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
-        cxNomeDirCons = new javax.swing.JTextField();
+        cxNomeDir = new javax.swing.JTextField();
         jLabel12 = new javax.swing.JLabel();
         btConsDir = new javax.swing.JButton();
         jLabel14 = new javax.swing.JLabel();
-        cxCpfDirCons = new javax.swing.JTextField();
+        cxCpfDir = new javax.swing.JTextField();
         btAlterarDir = new javax.swing.JButton();
         btDeletarDir = new javax.swing.JButton();
         btListarDir = new javax.swing.JButton();
+        btCadDir = new javax.swing.JButton();
+        cxIdDir = new javax.swing.JTextField();
+        jLabel4 = new javax.swing.JLabel();
         jScrollPaneProfessorCons = new javax.swing.JScrollPane();
         jPanelCadDiretor2 = new javax.swing.JPanel();
         jLabel15 = new javax.swing.JLabel();
-        cxNomeProfessorCons = new javax.swing.JTextField();
+        cxNomeProfessor = new javax.swing.JTextField();
         jLabel16 = new javax.swing.JLabel();
         btConsProfessor = new javax.swing.JButton();
         jLabel17 = new javax.swing.JLabel();
-        cxCpfProfessorCons = new javax.swing.JTextField();
+        cxCpfProfessor = new javax.swing.JTextField();
         btAlterarProfessor = new javax.swing.JButton();
         btDeletarProfessor = new javax.swing.JButton();
         btListarProfessor = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
-        cxDisciplinaProfessorCons = new javax.swing.JTextField();
+        cxDisciplinaProfessor = new javax.swing.JTextField();
+        brCadProfessor = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
+        cxIdProfessor = new javax.swing.JTextField();
         jScrollPaneAlunoCons = new javax.swing.JScrollPane();
         jPanelCadDiretor3 = new javax.swing.JPanel();
         jLabel18 = new javax.swing.JLabel();
@@ -94,16 +81,19 @@ public class JanelaPrincipal extends javax.swing.JFrame {
         jLabel19 = new javax.swing.JLabel();
         btConsAluno = new javax.swing.JButton();
         jLabel20 = new javax.swing.JLabel();
-        cxRaAlunoCons = new javax.swing.JTextField();
+        cxIdAlunoCons = new javax.swing.JTextField();
         btAlterarAluno = new javax.swing.JButton();
         btDeletarAluno = new javax.swing.JButton();
         btListarAlunos = new javax.swing.JButton();
         jLabel23 = new javax.swing.JLabel();
         cxTurmaAlunoCons = new javax.swing.JTextField();
+        jButtonCadAluno = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
         Iniciar = new javax.swing.JMenu();
-        jMenuItemAbrir = new javax.swing.JMenuItem();
-        jMenuItemSalvar = new javax.swing.JMenuItem();
+        jMenuAbrir = new javax.swing.JMenu();
+        jMenuItemAbrirDiretor = new javax.swing.JMenuItem();
+        jMenuItemAbrirProfessor = new javax.swing.JMenuItem();
+        jMenuItemAbrirAluno = new javax.swing.JMenuItem();
         jMenuItemSair = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -131,212 +121,50 @@ public class JanelaPrincipal extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Principal", jScrollPanePrincipal);
 
-        jLabel5.setText("CADASTRO DE DIRETOR");
-
-        jLabel6.setText("Nome");
-
-        btCadDir.setText("Cadastrar");
-
-        jLabel9.setText("CPF");
-
-        javax.swing.GroupLayout jPanelCadDiretorLayout = new javax.swing.GroupLayout(jPanelCadDiretor);
-        jPanelCadDiretor.setLayout(jPanelCadDiretorLayout);
-        jPanelCadDiretorLayout.setHorizontalGroup(
-            jPanelCadDiretorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanelCadDiretorLayout.createSequentialGroup()
-                .addGroup(jPanelCadDiretorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanelCadDiretorLayout.createSequentialGroup()
-                        .addGap(64, 64, 64)
-                        .addGroup(jPanelCadDiretorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel6)
-                            .addComponent(jLabel9))
-                        .addGap(23, 23, 23)
-                        .addGroup(jPanelCadDiretorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(cxNomeDirCad, javax.swing.GroupLayout.DEFAULT_SIZE, 240, Short.MAX_VALUE)
-                            .addComponent(cxCpfDirCad)))
-                    .addGroup(jPanelCadDiretorLayout.createSequentialGroup()
-                        .addGap(215, 215, 215)
-                        .addComponent(jLabel5)))
-                .addContainerGap(330, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelCadDiretorLayout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(btCadDir)
-                .addGap(177, 177, 177))
-        );
-        jPanelCadDiretorLayout.setVerticalGroup(
-            jPanelCadDiretorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanelCadDiretorLayout.createSequentialGroup()
-                .addGap(51, 51, 51)
-                .addComponent(jLabel5)
-                .addGap(89, 89, 89)
-                .addGroup(jPanelCadDiretorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel6)
-                    .addComponent(cxNomeDirCad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(jPanelCadDiretorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel9)
-                    .addComponent(cxCpfDirCad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(81, 81, 81)
-                .addComponent(btCadDir)
-                .addContainerGap(103, Short.MAX_VALUE))
-        );
-
-        jScrollPaneDiretorCad.setViewportView(jPanelCadDiretor);
-
-        jTabbedPaneCadastro.addTab("Diretor", jScrollPaneDiretorCad);
-
-        jLabel2.setText("Nome");
-
-        jLabel4.setText("CADASTRO DE PROFESSOR");
-
-        btCadProf.setText("Cadastrar");
-
-        jLabel8.setText("CPF");
-
-        jLabel21.setText("Disciplina");
-
-        javax.swing.GroupLayout jPanelCadProfessorLayout = new javax.swing.GroupLayout(jPanelCadProfessor);
-        jPanelCadProfessor.setLayout(jPanelCadProfessorLayout);
-        jPanelCadProfessorLayout.setHorizontalGroup(
-            jPanelCadProfessorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanelCadProfessorLayout.createSequentialGroup()
-                .addGroup(jPanelCadProfessorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanelCadProfessorLayout.createSequentialGroup()
-                        .addGap(64, 64, 64)
-                        .addGroup(jPanelCadProfessorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(jPanelCadProfessorLayout.createSequentialGroup()
-                                .addComponent(jLabel21)
-                                .addGap(23, 23, 23)
-                                .addComponent(cxDisciplinaProfCad, javax.swing.GroupLayout.DEFAULT_SIZE, 260, Short.MAX_VALUE))
-                            .addGroup(jPanelCadProfessorLayout.createSequentialGroup()
-                                .addGroup(jPanelCadProfessorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel2)
-                                    .addComponent(jLabel8))
-                                .addGap(41, 41, 41)
-                                .addGroup(jPanelCadProfessorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(cxNomeProfCad, javax.swing.GroupLayout.DEFAULT_SIZE, 260, Short.MAX_VALUE)
-                                    .addComponent(cxCpfProfCad)))))
-                    .addGroup(jPanelCadProfessorLayout.createSequentialGroup()
-                        .addGap(208, 208, 208)
-                        .addComponent(jLabel4)))
-                .addContainerGap(292, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelCadProfessorLayout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(btCadProf)
-                .addGap(149, 149, 149))
-        );
-        jPanelCadProfessorLayout.setVerticalGroup(
-            jPanelCadProfessorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanelCadProfessorLayout.createSequentialGroup()
-                .addGap(55, 55, 55)
-                .addComponent(jLabel4)
-                .addGap(85, 85, 85)
-                .addGroup(jPanelCadProfessorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(cxNomeProfCad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(jPanelCadProfessorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel8)
-                    .addComponent(cxCpfProfCad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(jPanelCadProfessorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel21)
-                    .addComponent(cxDisciplinaProfCad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(65, 65, 65)
-                .addComponent(btCadProf)
-                .addContainerGap(79, Short.MAX_VALUE))
-        );
-
-        jScrollPaneProfessorCad.setViewportView(jPanelCadProfessor);
-
-        jTabbedPaneCadastro.addTab("Professor", jScrollPaneProfessorCad);
-
-        jLabel10.setText("CADASTRO DE ALUNO");
-
-        jLabel11.setText("Nome");
-
-        jLabel13.setText("RA");
-
-        btCadAluno.setText("Cadastrar");
-
-        jLabel22.setText("Turma");
-
-        javax.swing.GroupLayout jPanelAlunoLayout = new javax.swing.GroupLayout(jPanelAluno);
-        jPanelAluno.setLayout(jPanelAlunoLayout);
-        jPanelAlunoLayout.setHorizontalGroup(
-            jPanelAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanelAlunoLayout.createSequentialGroup()
-                .addGroup(jPanelAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanelAlunoLayout.createSequentialGroup()
-                        .addGap(64, 64, 64)
-                        .addGroup(jPanelAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanelAlunoLayout.createSequentialGroup()
-                                .addComponent(jLabel22)
-                                .addGap(23, 23, 23)
-                                .addComponent(cxTurmaAlunoCad1, javax.swing.GroupLayout.DEFAULT_SIZE, 239, Short.MAX_VALUE))
-                            .addGroup(jPanelAlunoLayout.createSequentialGroup()
-                                .addGroup(jPanelAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel11)
-                                    .addComponent(jLabel13))
-                                .addGap(23, 23, 23)
-                                .addGroup(jPanelAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(cxNomeAlunoCad, javax.swing.GroupLayout.DEFAULT_SIZE, 240, Short.MAX_VALUE)
-                                    .addComponent(cxRaAlunoCad)))))
-                    .addGroup(jPanelAlunoLayout.createSequentialGroup()
-                        .addGap(219, 219, 219)
-                        .addComponent(jLabel10)))
-                .addGap(330, 330, 330))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelAlunoLayout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(btCadAluno)
-                .addGap(179, 179, 179))
-        );
-        jPanelAlunoLayout.setVerticalGroup(
-            jPanelAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanelAlunoLayout.createSequentialGroup()
-                .addGap(60, 60, 60)
-                .addComponent(jLabel10)
-                .addGap(80, 80, 80)
-                .addGroup(jPanelAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel11)
-                    .addComponent(cxNomeAlunoCad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(jPanelAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel13)
-                    .addComponent(cxRaAlunoCad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(jPanelAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel22)
-                    .addComponent(cxTurmaAlunoCad1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 75, Short.MAX_VALUE)
-                .addComponent(btCadAluno)
-                .addGap(69, 69, 69))
-        );
-
-        jScrollPaneAlunoCad.setViewportView(jPanelAluno);
-
-        jTabbedPaneCadastro.addTab("Aluno", jScrollPaneAlunoCad);
-
-        jScrollPaneCadastro.setViewportView(jTabbedPaneCadastro);
-
-        jTabbedPane1.addTab("Cadastro", jScrollPaneCadastro);
-
         jLabel7.setText("CONSULTA DE DIRETOR");
 
-        cxNomeDirCons.setBackground(new java.awt.Color(255, 255, 255));
-        cxNomeDirCons.setDisabledTextColor(new java.awt.Color(255, 255, 255));
+        cxNomeDir.setDisabledTextColor(new java.awt.Color(255, 255, 255));
 
         jLabel12.setText("Nome");
 
         btConsDir.setText("Consultar");
+        btConsDir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btConsDirActionPerformed(evt);
+            }
+        });
 
         jLabel14.setText("CPF");
 
         btAlterarDir.setText("Alterar");
+        btAlterarDir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btAlterarDirActionPerformed(evt);
+            }
+        });
 
         btDeletarDir.setText("Deletar");
+        btDeletarDir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btDeletarDirActionPerformed(evt);
+            }
+        });
 
         btListarDir.setText("Listar Diretores");
+        btListarDir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btListarDirActionPerformed(evt);
+            }
+        });
+
+        btCadDir.setText("Cadastrar");
+        btCadDir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btCadDirActionPerformed(evt);
+            }
+        });
+
+        jLabel4.setText("ID");
 
         javax.swing.GroupLayout jPanelCadDiretor1Layout = new javax.swing.GroupLayout(jPanelCadDiretor1);
         jPanelCadDiretor1.setLayout(jPanelCadDiretor1Layout);
@@ -351,21 +179,25 @@ public class JanelaPrincipal extends javax.swing.JFrame {
                         .addGap(73, 73, 73)
                         .addGroup(jPanelCadDiretor1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel12)
-                            .addComponent(jLabel14))
-                        .addGap(23, 23, 23)
+                            .addComponent(jLabel14)
+                            .addComponent(jLabel4))
+                        .addGap(19, 19, 19)
                         .addGroup(jPanelCadDiretor1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(cxNomeDirCons, javax.swing.GroupLayout.DEFAULT_SIZE, 161, Short.MAX_VALUE)
-                            .addComponent(cxCpfDirCons)))
+                            .addComponent(cxIdDir)
+                            .addComponent(cxNomeDir, javax.swing.GroupLayout.DEFAULT_SIZE, 161, Short.MAX_VALUE)
+                            .addComponent(cxCpfDir)))
                     .addGroup(jPanelCadDiretor1Layout.createSequentialGroup()
-                        .addGap(108, 108, 108)
+                        .addGap(59, 59, 59)
                         .addComponent(btListarDir)
-                        .addGap(18, 18, 18)
+                        .addGap(29, 29, 29)
                         .addComponent(btConsDir)
-                        .addGap(18, 18, 18)
+                        .addGap(32, 32, 32)
                         .addComponent(btAlterarDir)
-                        .addGap(18, 18, 18)
-                        .addComponent(btDeletarDir)))
-                .addContainerGap(238, Short.MAX_VALUE))
+                        .addGap(32, 32, 32)
+                        .addComponent(btDeletarDir)
+                        .addGap(28, 28, 28)
+                        .addComponent(btCadDir)))
+                .addContainerGap(178, Short.MAX_VALUE))
         );
         jPanelCadDiretor1Layout.setVerticalGroup(
             jPanelCadDiretor1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -373,50 +205,84 @@ public class JanelaPrincipal extends javax.swing.JFrame {
                 .addGap(51, 51, 51)
                 .addComponent(jLabel7)
                 .addGap(117, 117, 117)
-                .addGroup(jPanelCadDiretor1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel12)
-                    .addComponent(cxNomeDirCons, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(jPanelCadDiretor1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel14)
-                    .addComponent(cxCpfDirCons, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(jPanelCadDiretor1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jPanelCadDiretor1Layout.createSequentialGroup()
+                        .addGroup(jPanelCadDiretor1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel12)
+                            .addComponent(cxNomeDir, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanelCadDiretor1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel14)
+                            .addComponent(cxCpfDir, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(cxIdDir, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabel4))
                 .addGap(52, 52, 52)
                 .addGroup(jPanelCadDiretor1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btListarDir)
                     .addComponent(btConsDir)
                     .addComponent(btAlterarDir)
                     .addComponent(btDeletarDir)
-                    .addComponent(btListarDir))
-                .addContainerGap(111, Short.MAX_VALUE))
+                    .addComponent(btCadDir))
+                .addContainerGap(88, Short.MAX_VALUE))
         );
 
         jScrollPaneDiretorCons.setViewportView(jPanelCadDiretor1);
 
         jTabbedPane2.addTab("Diretor", jScrollPaneDiretorCons);
 
-        jLabel15.setText("CONSULTA DE ALUNO");
+        jLabel15.setText("CONSULTA DE PROFESSOR");
 
-        cxNomeProfessorCons.setBackground(new java.awt.Color(255, 255, 255));
-        cxNomeProfessorCons.setDisabledTextColor(new java.awt.Color(255, 255, 255));
+        cxNomeProfessor.setDisabledTextColor(new java.awt.Color(255, 255, 255));
 
         jLabel16.setText("Nome");
 
         btConsProfessor.setText("Consultar");
+        btConsProfessor.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btConsProfessorActionPerformed(evt);
+            }
+        });
 
         jLabel17.setText("CPF");
 
-        cxCpfProfessorCons.addActionListener(new java.awt.event.ActionListener() {
+        cxCpfProfessor.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cxCpfProfessorConsActionPerformed(evt);
+                cxCpfProfessorActionPerformed(evt);
             }
         });
 
         btAlterarProfessor.setText("Alterar");
+        btAlterarProfessor.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btAlterarProfessorActionPerformed(evt);
+            }
+        });
 
         btDeletarProfessor.setText("Deletar");
+        btDeletarProfessor.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btDeletarProfessorActionPerformed(evt);
+            }
+        });
 
         btListarProfessor.setText("Listar Professores");
+        btListarProfessor.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btListarProfessorActionPerformed(evt);
+            }
+        });
 
         jLabel3.setText("Disciplina");
+
+        brCadProfessor.setText("Cadastrar");
+        brCadProfessor.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                brCadProfessorActionPerformed(evt);
+            }
+        });
+
+        jLabel2.setText("ID");
 
         javax.swing.GroupLayout jPanelCadDiretor2Layout = new javax.swing.GroupLayout(jPanelCadDiretor2);
         jPanelCadDiretor2.setLayout(jPanelCadDiretor2Layout);
@@ -425,86 +291,122 @@ public class JanelaPrincipal extends javax.swing.JFrame {
             .addGroup(jPanelCadDiretor2Layout.createSequentialGroup()
                 .addGroup(jPanelCadDiretor2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanelCadDiretor2Layout.createSequentialGroup()
-                        .addGap(73, 73, 73)
-                        .addGroup(jPanelCadDiretor2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(jPanelCadDiretor2Layout.createSequentialGroup()
-                                .addComponent(jLabel16)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 37, Short.MAX_VALUE)
-                                .addComponent(cxNomeProfessorCons, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanelCadDiretor2Layout.createSequentialGroup()
-                                .addComponent(jLabel3)
-                                .addGap(18, 18, 18)
-                                .addComponent(cxDisciplinaProfessorCons))
-                            .addGroup(jPanelCadDiretor2Layout.createSequentialGroup()
-                                .addComponent(jLabel17)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(cxCpfProfessorCons, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                    .addGroup(jPanelCadDiretor2Layout.createSequentialGroup()
-                        .addGap(113, 113, 113)
-                        .addComponent(btListarProfessor)
-                        .addGap(18, 18, 18)
-                        .addComponent(btConsProfessor)
-                        .addGap(18, 18, 18)
-                        .addComponent(btAlterarProfessor)
-                        .addGap(18, 18, 18)
-                        .addComponent(btDeletarProfessor))
-                    .addGroup(jPanelCadDiretor2Layout.createSequentialGroup()
                         .addGap(215, 215, 215)
-                        .addComponent(jLabel15)))
-                .addContainerGap(220, Short.MAX_VALUE))
+                        .addComponent(jLabel15))
+                    .addGroup(jPanelCadDiretor2Layout.createSequentialGroup()
+                        .addGap(60, 60, 60)
+                        .addGroup(jPanelCadDiretor2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanelCadDiretor2Layout.createSequentialGroup()
+                                .addGap(6, 6, 6)
+                                .addGroup(jPanelCadDiretor2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addGroup(jPanelCadDiretor2Layout.createSequentialGroup()
+                                        .addComponent(jLabel16)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 37, Short.MAX_VALUE)
+                                        .addComponent(cxNomeProfessor, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(jPanelCadDiretor2Layout.createSequentialGroup()
+                                        .addComponent(jLabel3)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(cxDisciplinaProfessor))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelCadDiretor2Layout.createSequentialGroup()
+                                        .addGroup(jPanelCadDiretor2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jLabel17)
+                                            .addComponent(jLabel2))
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addGroup(jPanelCadDiretor2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                            .addComponent(cxCpfProfessor, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(cxIdProfessor, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 218, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelCadDiretor2Layout.createSequentialGroup()
+                                .addComponent(btListarProfessor)
+                                .addGap(18, 18, 18)
+                                .addComponent(btConsProfessor)
+                                .addGap(18, 18, 18)
+                                .addComponent(btAlterarProfessor)
+                                .addGap(18, 18, 18)
+                                .addComponent(btDeletarProfessor)
+                                .addGap(29, 29, 29)
+                                .addComponent(brCadProfessor)))))
+                .addContainerGap(202, Short.MAX_VALUE))
         );
         jPanelCadDiretor2Layout.setVerticalGroup(
             jPanelCadDiretor2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelCadDiretor2Layout.createSequentialGroup()
                 .addGap(51, 51, 51)
                 .addComponent(jLabel15)
-                .addGap(117, 117, 117)
+                .addGap(73, 73, 73)
                 .addGroup(jPanelCadDiretor2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel16)
-                    .addComponent(cxNomeProfessorCons, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(cxNomeProfessor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanelCadDiretor2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(cxDisciplinaProfessorCons, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cxDisciplinaProfessor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel3))
                 .addGap(18, 18, 18)
                 .addGroup(jPanelCadDiretor2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel17)
-                    .addComponent(cxCpfProfessorCons, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 46, Short.MAX_VALUE)
+                    .addComponent(cxCpfProfessor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
                 .addGroup(jPanelCadDiretor2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btConsProfessor)
-                    .addComponent(btAlterarProfessor)
+                    .addComponent(jLabel2)
+                    .addComponent(cxIdProfessor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 53, Short.MAX_VALUE)
+                .addGroup(jPanelCadDiretor2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(brCadProfessor)
                     .addComponent(btDeletarProfessor)
-                    .addComponent(btListarProfessor))
-                .addGap(77, 77, 77))
+                    .addComponent(btListarProfessor)
+                    .addComponent(btConsProfessor)
+                    .addComponent(btAlterarProfessor))
+                .addGap(85, 85, 85))
         );
 
         jScrollPaneProfessorCons.setViewportView(jPanelCadDiretor2);
 
         jTabbedPane2.addTab("Professor", jScrollPaneProfessorCons);
 
-        jLabel18.setText("CONSULTA DE DIRETOR");
+        jLabel18.setText("CONSULTA DE ALUNO");
 
-        cxNomeAlunoCons.setBackground(new java.awt.Color(255, 255, 255));
         cxNomeAlunoCons.setDisabledTextColor(new java.awt.Color(255, 255, 255));
 
         jLabel19.setText("Nome");
 
         btConsAluno.setText("Consultar");
+        btConsAluno.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btConsAlunoActionPerformed(evt);
+            }
+        });
 
-        jLabel20.setText("RA");
-
-        cxRaAlunoCons.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel20.setText("ID");
 
         btAlterarAluno.setText("Alterar");
+        btAlterarAluno.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btAlterarAlunoActionPerformed(evt);
+            }
+        });
 
         btDeletarAluno.setText("Deletar");
+        btDeletarAluno.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btDeletarAlunoActionPerformed(evt);
+            }
+        });
 
         btListarAlunos.setText("Listar Alunos");
+        btListarAlunos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btListarAlunosActionPerformed(evt);
+            }
+        });
 
         jLabel23.setText("Turma");
 
-        cxTurmaAlunoCons.setBackground(new java.awt.Color(255, 255, 255));
+        jButtonCadAluno.setText("Cadastrar");
+        jButtonCadAluno.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonCadAlunoActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanelCadDiretor3Layout = new javax.swing.GroupLayout(jPanelCadDiretor3);
         jPanelCadDiretor3.setLayout(jPanelCadDiretor3Layout);
@@ -525,21 +427,23 @@ public class JanelaPrincipal extends javax.swing.JFrame {
                                 .addGap(28, 28, 28)
                                 .addGroup(jPanelCadDiretor3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(cxNomeAlunoCons, javax.swing.GroupLayout.DEFAULT_SIZE, 218, Short.MAX_VALUE)
-                                    .addComponent(cxRaAlunoCons)))
+                                    .addComponent(cxIdAlunoCons)))
                             .addGroup(jPanelCadDiretor3Layout.createSequentialGroup()
                                 .addComponent(jLabel23)
                                 .addGap(27, 27, 27)
                                 .addComponent(cxTurmaAlunoCons))))
                     .addGroup(jPanelCadDiretor3Layout.createSequentialGroup()
-                        .addGap(114, 114, 114)
+                        .addGap(65, 65, 65)
                         .addComponent(btListarAlunos)
-                        .addGap(18, 18, 18)
+                        .addGap(32, 32, 32)
                         .addComponent(btConsAluno)
-                        .addGap(18, 18, 18)
+                        .addGap(28, 28, 28)
                         .addComponent(btAlterarAluno)
+                        .addGap(43, 43, 43)
+                        .addComponent(btDeletarAluno)
                         .addGap(18, 18, 18)
-                        .addComponent(btDeletarAluno)))
-                .addContainerGap(242, Short.MAX_VALUE))
+                        .addComponent(jButtonCadAluno)))
+                .addContainerGap(182, Short.MAX_VALUE))
         );
         jPanelCadDiretor3Layout.setVerticalGroup(
             jPanelCadDiretor3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -557,23 +461,24 @@ public class JanelaPrincipal extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(jPanelCadDiretor3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel20)
-                    .addComponent(cxRaAlunoCons, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(cxIdAlunoCons, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(36, 36, 36)
                 .addGroup(jPanelCadDiretor3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btConsAluno)
                     .addComponent(btAlterarAluno)
                     .addComponent(btDeletarAluno)
-                    .addComponent(btListarAlunos))
-                .addContainerGap(78, Short.MAX_VALUE))
+                    .addComponent(btListarAlunos)
+                    .addComponent(jButtonCadAluno))
+                .addContainerGap(89, Short.MAX_VALUE))
         );
 
         jScrollPaneAlunoCons.setViewportView(jPanelCadDiretor3);
 
         jTabbedPane2.addTab("Aluno", jScrollPaneAlunoCons);
 
-        jScrollPaneConsulta.setViewportView(jTabbedPane2);
+        jScrollPaneCRUD.setViewportView(jTabbedPane2);
 
-        jTabbedPane1.addTab("Consulta", jScrollPaneConsulta);
+        jTabbedPane1.addTab("CRUD", jScrollPaneCRUD);
 
         jPanel1.add(jTabbedPane1);
 
@@ -581,26 +486,270 @@ public class JanelaPrincipal extends javax.swing.JFrame {
 
         Iniciar.setText("Iniciar");
 
-        jMenuItemAbrir.setText("Abrir");
-        Iniciar.add(jMenuItemAbrir);
+        jMenuAbrir.setText("Abrir");
 
-        jMenuItemSalvar.setText("Salvar");
-        Iniciar.add(jMenuItemSalvar);
+        jMenuItemAbrirDiretor.setText("Abrir Diretores");
+        jMenuItemAbrirDiretor.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItemAbrirDiretorActionPerformed(evt);
+            }
+        });
+        jMenuAbrir.add(jMenuItemAbrirDiretor);
+
+        jMenuItemAbrirProfessor.setText("Abrir Professores");
+        jMenuItemAbrirProfessor.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItemAbrirProfessorActionPerformed(evt);
+            }
+        });
+        jMenuAbrir.add(jMenuItemAbrirProfessor);
+
+        jMenuItemAbrirAluno.setText("Abrir Alunos");
+        jMenuItemAbrirAluno.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItemAbrirAlunoActionPerformed(evt);
+            }
+        });
+        jMenuAbrir.add(jMenuItemAbrirAluno);
+
+        Iniciar.add(jMenuAbrir);
 
         jMenuItemSair.setText("Sair");
+        jMenuItemSair.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItemSairActionPerformed(evt);
+            }
+        });
         Iniciar.add(jMenuItemSair);
 
         jMenuBar1.add(Iniciar);
 
         setJMenuBar(jMenuBar1);
 
-        setSize(new java.awt.Dimension(700, 500));
+        setSize(new java.awt.Dimension(710, 523));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void cxCpfProfessorConsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cxCpfProfessorConsActionPerformed
+    private void jMenuItemAbrirAlunoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemAbrirAlunoActionPerformed
+
+        controllerAluno.lerAlunos();
+
+    }//GEN-LAST:event_jMenuItemAbrirAlunoActionPerformed
+
+    private void jMenuItemAbrirProfessorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemAbrirProfessorActionPerformed
+        CP.lerProfessores();
+    }//GEN-LAST:event_jMenuItemAbrirProfessorActionPerformed
+
+    private void jMenuItemAbrirDiretorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemAbrirDiretorActionPerformed
+        CD.lerDiretores();
+    }//GEN-LAST:event_jMenuItemAbrirDiretorActionPerformed
+
+    private void btListarAlunosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btListarAlunosActionPerformed
+        verificacaoListaAluno();
+        JOptionPane.showMessageDialog(null, controllerAluno.getListAluno(), "Lista de Alunos", JOptionPane.INFORMATION_MESSAGE);
+    }//GEN-LAST:event_btListarAlunosActionPerformed
+
+    private void btDeletarAlunoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btDeletarAlunoActionPerformed
+        verificacaoListaAluno();
+        controllerAluno.setAluno(new Aluno(Integer.parseInt(cxIdAlunoCons.getText())));
+        if (controllerAluno.delete()) {
+            JOptionPane.showMessageDialog(null, "Deletado", "Deletar", 1);
+            limparConsAluno();
+        } else {
+            JOptionPane.showMessageDialog(null, "ERROR", "Deletar", 0);
+        }
+    }//GEN-LAST:event_btDeletarAlunoActionPerformed
+
+    private void btAlterarAlunoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btAlterarAlunoActionPerformed
+        verificacaoListaAluno();
+
+        if (controllerAluno.updateAluno(Integer.parseInt(cxIdAlunoCons.getText()), cxNomeAlunoCons.getText(), cxTurmaAlunoCons.getText()) == 1) {
+            JOptionPane.showMessageDialog(null, "Atualizado", "Atualizacao", 1);
+        } else {
+            JOptionPane.showMessageDialog(null, "Error", "Atualizacao", 0);
+        }
+
+    }//GEN-LAST:event_btAlterarAlunoActionPerformed
+
+    private void btConsAlunoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btConsAlunoActionPerformed
+        verificacaoListaAluno();
+        Aluno aluno = new Aluno(Integer.parseInt(cxIdAlunoCons.getText()));
+        controllerAluno.setAluno(aluno);
+        aluno = controllerAluno.consAluno();
+        if (aluno != null) {
+            cxNomeAlunoCons.setText(aluno.getNome());
+            cxTurmaAlunoCons.setText(aluno.getTurma());
+        } else {
+            JOptionPane.showMessageDialog(null, "Não Encontrado", "ERROR", 0);
+            limparConsAluno();
+        }
+    }//GEN-LAST:event_btConsAlunoActionPerformed
+
+    private void cxCpfProfessorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cxCpfProfessorActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_cxCpfProfessorConsActionPerformed
+    }//GEN-LAST:event_cxCpfProfessorActionPerformed
+
+    private void jButtonCadAlunoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCadAlunoActionPerformed
+        verificacaoListaAluno();
+        if (cxNomeAlunoCons.getText().isEmpty()) {
+            JOptionPane.showMessageDialog(null, "ERROR", "ERROR", 0);
+        } else {
+            controllerAluno.setAluno(new Aluno(cxNomeAlunoCons.getText(), cxTurmaAlunoCons.getText()));
+            controllerAluno.gravarAluno();
+            JOptionPane.showMessageDialog(null, "Cadastrado!", "Cadastro", 1);
+
+        }
+    }//GEN-LAST:event_jButtonCadAlunoActionPerformed
+
+    private void brCadProfessorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_brCadProfessorActionPerformed
+        verificacaoListaProfessor();
+        if (cxNomeProfessor.getText().isEmpty()) {
+            JOptionPane.showMessageDialog(null, "ERROR", "ERROR", 0);
+        } else {
+            CP.setProfessor(new Professor(cxNomeProfessor.getText(), cxDisciplinaProfessor.getText(), Integer.parseInt(cxCpfProfessor.getText())));
+            CP.gravarProfessor();
+            JOptionPane.showMessageDialog(null, "Cadastrado!", "Cadastro", 1);
+        }
+    }//GEN-LAST:event_brCadProfessorActionPerformed
+
+    private void btConsProfessorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btConsProfessorActionPerformed
+        verificacaoListaProfessor();
+        Professor professor = new Professor(Integer.parseInt(cxIdProfessor.getText()));
+        CP.setProfessor(professor);
+        professor = CP.consProfessor();
+        if (professor != null) {
+            cxNomeProfessor.setText(professor.getNome());
+            cxDisciplinaProfessor.setText(professor.getDisciplina());
+            cxCpfProfessor.setText(professor.getCpf().toString());
+        } else {
+            JOptionPane.showMessageDialog(null, "Não Encontrado", "ERROR", 0);
+            limparConsAluno();
+        }
+    }//GEN-LAST:event_btConsProfessorActionPerformed
+
+    private void btAlterarProfessorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btAlterarProfessorActionPerformed
+        verificacaoListaProfessor();
+
+        if (CP.updateProfessor(Integer.parseInt(cxIdProfessor.getText()), cxNomeProfessor.getText(), cxDisciplinaProfessor.getText(), Integer.parseInt(cxCpfProfessor.getText())) == 1) {
+            JOptionPane.showMessageDialog(null, "Atualizado", "Atualizacao", 1);
+        } else {
+            JOptionPane.showMessageDialog(null, "Error", "Atualizacao", 0);
+        }
+    }//GEN-LAST:event_btAlterarProfessorActionPerformed
+
+    private void btDeletarProfessorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btDeletarProfessorActionPerformed
+        verificacaoListaProfessor();
+        CP.setProfessor(new Professor(Integer.parseInt(cxIdProfessor.getText())));
+        if (CP.delete()) {
+            JOptionPane.showMessageDialog(null, "Deletado", "Deletar", 1);
+            limparConsProfessor();
+        } else {
+            JOptionPane.showMessageDialog(null, "ERROR", "Deletar", 0);
+        }
+    }//GEN-LAST:event_btDeletarProfessorActionPerformed
+
+    private void btListarProfessorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btListarProfessorActionPerformed
+        verificacaoListaProfessor();
+        JOptionPane.showMessageDialog(null, CP.getListProfessor(), "Lista de Professores", JOptionPane.INFORMATION_MESSAGE);
+
+    }//GEN-LAST:event_btListarProfessorActionPerformed
+
+    private void btListarDirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btListarDirActionPerformed
+        verificacaoListaDiretor();
+        JOptionPane.showMessageDialog(null, CD.getListDiretor(), "Lista de Diretores", JOptionPane.INFORMATION_MESSAGE);
+
+    }//GEN-LAST:event_btListarDirActionPerformed
+
+    private void btConsDirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btConsDirActionPerformed
+        verificacaoListaDiretor();
+        Diretor diretor = new Diretor(Integer.parseInt(cxIdDir.getText()));
+        CD.setDiretor(diretor);
+        diretor = CD.consDiretor();
+        if (diretor != null) {
+            cxNomeDir.setText(diretor.getNome());
+            cxCpfDir.setText(diretor.getCpf().toString());
+        } else {
+            JOptionPane.showMessageDialog(null, "Não Encontrado", "ERROR", 0);
+            limparConsDiretor();
+        }
+    }//GEN-LAST:event_btConsDirActionPerformed
+
+    private void btAlterarDirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btAlterarDirActionPerformed
+        verificacaoListaDiretor();
+
+        if (CD.updateDiretor(Integer.parseInt(cxIdDir.getText()),
+                cxNomeDir.getText(),
+                Integer.parseInt(cxCpfDir.getText())) == 1) {
+            JOptionPane.showMessageDialog(null, "Atualizado", "Atualizacao", 1);
+        } else {
+            JOptionPane.showMessageDialog(null, "Error", "Atualizacao", 0);
+        }
+    }//GEN-LAST:event_btAlterarDirActionPerformed
+
+    private void btDeletarDirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btDeletarDirActionPerformed
+        verificacaoListaDiretor();
+        CD.setDiretor(new Diretor(Integer.parseInt(cxIdDir.getText())));
+        if (CD.delete()) {
+            JOptionPane.showMessageDialog(null, "Deletado", "Deletar", 1);
+            limparConsDiretor();
+        } else {
+            JOptionPane.showMessageDialog(null, "ERROR", "Deletar", 0);
+        }
+    }//GEN-LAST:event_btDeletarDirActionPerformed
+
+    private void btCadDirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btCadDirActionPerformed
+        verificacaoListaDiretor();
+        if (cxNomeDir.getText().isEmpty()) {
+            JOptionPane.showMessageDialog(null, "ERROR", "ERROR", 0);
+        } else {
+            CD.setDiretor(new Diretor(cxNomeDir.getText(), Integer.parseInt(cxCpfDir.getText())));
+            CD.gravarDiretor();
+            JOptionPane.showMessageDialog(null, "Cadastrado!", "Cadastro", 1);
+        }
+    }//GEN-LAST:event_btCadDirActionPerformed
+
+    private void jMenuItemSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemSairActionPerformed
+        System.exit(0);
+    }//GEN-LAST:event_jMenuItemSairActionPerformed
+
+    public void verificacaoListaAluno() {
+        if (controllerAluno.getArquivo() == null) {
+            controllerAluno.lerAlunos();
+
+        }
+    }
+
+    public void verificacaoListaProfessor() {
+        if (CP.getArquivo() == null) {
+            CP.lerProfessores();
+        }
+    }
+
+    public void verificacaoListaDiretor() {
+        if (CD.getArquivo() == null) {
+            CD.lerDiretores();
+        }
+
+    }
+
+    public void limparConsAluno() {
+        cxNomeAlunoCons.setText("");
+        cxTurmaAlunoCons.setText("");
+        cxIdAlunoCons.setText("");
+    }
+
+    public void limparConsProfessor() {
+        cxNomeProfessor.setText("");
+        cxCpfProfessor.setText("");
+        cxDisciplinaProfessor.setText("");
+        cxIdProfessor.setText("");
+    }
+
+    public void limparConsDiretor() {
+        cxNomeDir.setText("");
+        cxCpfDir.setText("");
+        cxIdDir.setText("");
+    }
 
     /**
      * @param args the command line arguments
@@ -639,12 +788,11 @@ public class JanelaPrincipal extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenu Iniciar;
+    private javax.swing.JButton brCadProfessor;
     private javax.swing.JButton btAlterarAluno;
     private javax.swing.JButton btAlterarDir;
     private javax.swing.JButton btAlterarProfessor;
-    private javax.swing.JButton btCadAluno;
     private javax.swing.JButton btCadDir;
-    private javax.swing.JButton btCadProf;
     private javax.swing.JButton btConsAluno;
     private javax.swing.JButton btConsDir;
     private javax.swing.JButton btConsProfessor;
@@ -654,27 +802,19 @@ public class JanelaPrincipal extends javax.swing.JFrame {
     private javax.swing.JButton btListarAlunos;
     private javax.swing.JButton btListarDir;
     private javax.swing.JButton btListarProfessor;
-    private javax.swing.JTextField cxCpfDirCad;
-    private javax.swing.JTextField cxCpfDirCons;
-    private javax.swing.JTextField cxCpfProfCad;
-    private javax.swing.JTextField cxCpfProfessorCons;
-    private javax.swing.JTextField cxDisciplinaProfCad;
-    private javax.swing.JTextField cxDisciplinaProfessorCons;
-    private javax.swing.JTextField cxNomeAlunoCad;
+    private javax.swing.JTextField cxCpfDir;
+    private javax.swing.JTextField cxCpfProfessor;
+    private javax.swing.JTextField cxDisciplinaProfessor;
+    private javax.swing.JTextField cxIdAlunoCons;
+    private javax.swing.JTextField cxIdDir;
+    private javax.swing.JTextField cxIdProfessor;
     private javax.swing.JTextField cxNomeAlunoCons;
-    private javax.swing.JTextField cxNomeDirCad;
-    private javax.swing.JTextField cxNomeDirCons;
-    private javax.swing.JTextField cxNomeProfCad;
-    private javax.swing.JTextField cxNomeProfessorCons;
-    private javax.swing.JTextField cxRaAlunoCad;
-    private javax.swing.JTextField cxRaAlunoCons;
-    private javax.swing.JTextField cxTurmaAlunoCad1;
+    private javax.swing.JTextField cxNomeDir;
+    private javax.swing.JTextField cxNomeProfessor;
     private javax.swing.JTextField cxTurmaAlunoCons;
+    private javax.swing.JButton jButtonCadAluno;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
@@ -683,39 +823,27 @@ public class JanelaPrincipal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
-    private javax.swing.JLabel jLabel21;
-    private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
+    private javax.swing.JMenu jMenuAbrir;
     private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JMenuItem jMenuItemAbrir;
+    private javax.swing.JMenuItem jMenuItemAbrirAluno;
+    private javax.swing.JMenuItem jMenuItemAbrirDiretor;
+    private javax.swing.JMenuItem jMenuItemAbrirProfessor;
     private javax.swing.JMenuItem jMenuItemSair;
-    private javax.swing.JMenuItem jMenuItemSalvar;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanelAluno;
-    private javax.swing.JPanel jPanelCadDiretor;
     private javax.swing.JPanel jPanelCadDiretor1;
     private javax.swing.JPanel jPanelCadDiretor2;
     private javax.swing.JPanel jPanelCadDiretor3;
-    private javax.swing.JPanel jPanelCadProfessor;
     private javax.swing.JPanel jPanelPrincipal;
-    private javax.swing.JScrollPane jScrollPaneAlunoCad;
     private javax.swing.JScrollPane jScrollPaneAlunoCons;
-    private javax.swing.JScrollPane jScrollPaneCadastro;
-    private javax.swing.JScrollPane jScrollPaneConsulta;
-    private javax.swing.JScrollPane jScrollPaneDiretorCad;
+    private javax.swing.JScrollPane jScrollPaneCRUD;
     private javax.swing.JScrollPane jScrollPaneDiretorCons;
     private javax.swing.JScrollPane jScrollPanePrincipal;
-    private javax.swing.JScrollPane jScrollPaneProfessorCad;
     private javax.swing.JScrollPane jScrollPaneProfessorCons;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTabbedPane jTabbedPane2;
-    private javax.swing.JTabbedPane jTabbedPaneCadastro;
     // End of variables declaration//GEN-END:variables
 }
