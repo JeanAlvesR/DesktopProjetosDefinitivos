@@ -13,7 +13,10 @@ import java.util.StringTokenizer;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.function.Function;
 import java.util.stream.Collectors;
+import model.Aluno;
+import model.Diretor;
 import model.Pessoa;
+import model.Professor;
 
 /**
  *
@@ -24,6 +27,31 @@ public class ControllerArquivoTextoPessoaGeral<T extends Pessoa> extends Control
 
     private List<T> lista = new ArrayList();
     private T pessoa = null;
+
+    public final static Function<StringTokenizer, Aluno> FUNCAOALUNO = (token -> {
+        Aluno pessoa = new Aluno();
+        pessoa.setIdPessoa(Integer.parseInt((token.nextToken())));
+        pessoa.setNome(token.nextToken());
+        pessoa.setTurma(token.nextToken());
+        return pessoa;
+    });
+
+    public final static Function<StringTokenizer, Professor> FUNCAOPROFESSOR = (token -> {
+        Professor pessoa = new Professor();
+        pessoa.setIdPessoa(Integer.parseInt((token.nextToken())));
+        pessoa.setNome(token.nextToken());
+        pessoa.setDisciplina(token.nextToken());
+        pessoa.setCpf(Integer.parseInt(token.nextToken()));
+        return pessoa;
+    });
+
+    public final static Function<StringTokenizer, Diretor> FUNCAODIRETOR = (token -> {
+        Diretor pessoa = new Diretor();
+        pessoa.setIdPessoa(Integer.parseInt((token.nextToken())));
+        pessoa.setNome(token.nextToken());
+        pessoa.setCpf(Integer.parseInt(token.nextToken()));
+        return pessoa;
+    });
 
     public void lerPessoas(Function<StringTokenizer, T> funcao) {
         setArquivo("Abrir");
@@ -65,7 +93,7 @@ public class ControllerArquivoTextoPessoaGeral<T extends Pessoa> extends Control
         escrever(true);
     }
 
-    public int updateAluno() {
+    public int updatePessoa() {
         AtomicInteger verifica = new AtomicInteger(0);//Serve para thread Safe...
 
         lista = lista.stream().
@@ -84,7 +112,7 @@ public class ControllerArquivoTextoPessoaGeral<T extends Pessoa> extends Control
         return verifica.get();
     }
 
-    public boolean delete() {
+    public boolean deletePessoa() {
         pessoa = consPessoa();
         if (pessoa != null) {
             lista.remove(pessoa);

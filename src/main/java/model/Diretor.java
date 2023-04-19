@@ -22,6 +22,11 @@ public class Diretor extends Pessoa{
         this.cpf = cpf;
     }
 
+    public Diretor(Integer idPessoa, String nome, Integer cpf) {
+        super(idPessoa, nome);
+        this.cpf = cpf;
+    }
+    
     public Diretor(Integer idPessoa){
         this.idPessoa = idPessoa;
     }

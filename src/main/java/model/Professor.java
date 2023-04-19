@@ -17,6 +17,11 @@ public class Professor extends Diretor{
         this.disciplina = disciplina;
     }
 
+    public Professor(Integer idPessoa ,String nome, String disciplina, Integer cpf) {
+        super(idPessoa, nome, cpf);
+        this.disciplina = disciplina;
+    }
+    
     public Professor(Integer idPessoa){
         this.idPessoa = idPessoa;
     }
