@@ -25,7 +25,12 @@ public abstract class Pessoa {
         idPessoa = ID;
         ID++;
     }
-
+    
+    public Pessoa(Integer idPessoa, String nome){
+        this.idPessoa = idPessoa;
+        this.nome = nome;
+    }
+    
     public String getNome() {
         return nome;
     }

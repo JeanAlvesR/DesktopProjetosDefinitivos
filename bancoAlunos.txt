@@ -1,3 +1,2 @@
-4;Broly;Comp
 5;Vegeta;Comp
 6;Naruto;Comp

@@ -34,8 +34,8 @@ public class ControllerArquivoTexto extends ControllerArquivo {
     }
 
     /**
-     * @return true caso a operação de leitura seja bem sucedida ou false
-     * caso contrário.
+     * @return true caso a operação de leitura seja bem sucedida ou false caso
+     * contrário.
      */
     @Override
     public boolean ler() {
@@ -59,10 +59,10 @@ public class ControllerArquivoTexto extends ControllerArquivo {
     }
 
     /**
-     * @param append se o texto será continuado a partir do seu
-     * final (append = false) ou se o arquivo será sobrescrito (append = false)
-     * @return true caso a operação de escrita seja bem sucedida ou false
-     * caso contrário.
+     * @param append se o texto será continuado a partir do seu final (append =
+     * false) ou se o arquivo será sobrescrito (append = false)
+     * @return true caso a operação de escrita seja bem sucedida ou false caso
+     * contrário.
      */
     @Override
     public boolean escrever(boolean append) {
@@ -81,23 +81,4 @@ public class ControllerArquivoTexto extends ControllerArquivo {
         }
     }
 
-    public String converteListaString(List<? extends Pessoa> lista){ //Recebe qualquer lista extendida de pessoa -> Generic é bem útil kk
-        StringBuilder aux = new StringBuilder();
-        lista.forEach( x -> aux.append(x.toString()));
-        return aux.toString();
-    }
-
-    //Sobrecarga...
-    public void preGravacao(List<? extends Pessoa> lista){//Estava muito repetitivo
-       setTexto(converteListaString(lista));
-        if(getArquivo() == null){
-            setArquivo("Salvar");
-        }
-   }
-    public void preGravacao(String aux){//Estava muito repetitivo
-       setTexto(aux);
-        if(getArquivo() == null){
-            setArquivo("Salvar");
-        }
-   }
 }

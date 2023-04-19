@@ -5,6 +5,7 @@
 package view;
 
 import controller.*;
+import java.util.function.Function;
 
 import javax.swing.JOptionPane;
 import model.Aluno;
@@ -20,10 +21,18 @@ public class JanelaPrincipal extends javax.swing.JFrame {
     /**
      * Creates new form JanelaPrincipal
      */
-    ControllerArquivoTextoAluno controllerAluno = new ControllerArquivoTextoAluno();
-    ControllerArquivoTextoProfessor CP = new ControllerArquivoTextoProfessor();
-    ControllerArquivoTextoDiretor CD = new ControllerArquivoTextoDiretor();
-
+    ControllerArquivoTextoPessoaGeral<Aluno> controllerAluno = new ControllerArquivoTextoPessoaGeral();
+    ControllerArquivoTextoPessoaGeral<Professor> CP = new ControllerArquivoTextoPessoaGeral();
+    ControllerArquivoTextoPessoaGeral<Diretor> CD = new ControllerArquivoTextoPessoaGeral();
+    
+    Function funcAlunos<StringTokenizer, T> = (token -> {
+            Aluno pessoa = new Aluno();
+            pessoa.setIdPessoa(Integer.parseInt((token.nextToken())));
+            pessoa.setNome(token.nextToken());
+            pessoa.setTurma(token.nextToken());
+            return pessoa;});
+    
+    
     public JanelaPrincipal() {
         initComponents();
     }
@@ -532,7 +541,7 @@ public class JanelaPrincipal extends javax.swing.JFrame {
 
     private void jMenuItemAbrirAlunoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemAbrirAlunoActionPerformed
 
-        controllerAluno.lerAlunos();
+        controllerAluno.lerPessoas();
 
     }//GEN-LAST:event_jMenuItemAbrirAlunoActionPerformed
 

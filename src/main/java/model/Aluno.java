@@ -23,8 +23,12 @@ public class Aluno extends Pessoa{
         super(nome);
         this.turma = turma;
     }
-
-
+    
+    public Aluno(Integer idPessoa, String nome, String turma) {
+        super(idPessoa, nome);
+        this.turma = turma;
+    }
+    
     public String getTurma() {
         return turma;
     }
