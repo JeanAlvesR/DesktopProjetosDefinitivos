@@ -218,6 +218,8 @@
                                                   <Component id="cxNomeDir" alignment="0" pref="161" max="32767" attributes="0"/>
                                                   <Component id="cxCpfDir" alignment="0" max="32767" attributes="0"/>
                                               </Group>
+                                              <EmptySpace min="-2" pref="77" max="-2" attributes="0"/>
+                                              <Component id="limparDir" min="-2" max="-2" attributes="0"/>
                                           </Group>
                                           <Group type="102" alignment="0" attributes="0">
                                               <EmptySpace min="-2" pref="59" max="-2" attributes="0"/>
@@ -254,11 +256,14 @@
                                                   <Component id="cxCpfDir" alignment="0" min="-2" max="-2" attributes="0"/>
                                               </Group>
                                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                              <Component id="cxIdDir" min="-2" max="-2" attributes="0"/>
+                                              <Group type="103" groupAlignment="3" attributes="0">
+                                                  <Component id="cxIdDir" alignment="3" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="limparDir" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              </Group>
                                           </Group>
                                           <Component id="jLabel4" alignment="1" min="-2" max="-2" attributes="0"/>
                                       </Group>
-                                      <EmptySpace min="-2" pref="52" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="51" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="3" attributes="0">
                                           <Component id="btListarDir" alignment="3" min="-2" max="-2" attributes="0"/>
                                           <Component id="btConsDir" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -266,7 +271,7 @@
                                           <Component id="btDeletarDir" alignment="3" min="-2" max="-2" attributes="0"/>
                                           <Component id="btCadDir" alignment="3" min="-2" max="-2" attributes="0"/>
                                       </Group>
-                                      <EmptySpace pref="88" max="32767" attributes="0"/>
+                                      <EmptySpace pref="89" max="32767" attributes="0"/>
                                   </Group>
                               </Group>
                             </DimensionLayout>
@@ -343,6 +348,14 @@
                                 <Property name="text" type="java.lang.String" value="ID"/>
                               </Properties>
                             </Component>
+                            <Component class="javax.swing.JButton" name="limparDir">
+                              <Properties>
+                                <Property name="text" type="java.lang.String" value="Limpar"/>
+                              </Properties>
+                              <Events>
+                                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="limparDirActionPerformed"/>
+                              </Events>
+                            </Component>
                           </SubComponents>
                         </Container>
                       </SubComponents>
@@ -397,7 +410,8 @@
                                                               </Group>
                                                           </Group>
                                                       </Group>
-                                                      <EmptySpace pref="218" max="-2" attributes="0"/>
+                                                      <EmptySpace min="-2" pref="55" max="-2" attributes="0"/>
+                                                      <Component id="limparProfessor" min="-2" max="-2" attributes="0"/>
                                                   </Group>
                                                   <Group type="102" alignment="1" attributes="0">
                                                       <Component id="btListarProfessor" min="-2" max="-2" attributes="0"/>
@@ -441,6 +455,7 @@
                                       <Group type="103" groupAlignment="3" attributes="0">
                                           <Component id="jLabel2" alignment="3" min="-2" max="-2" attributes="0"/>
                                           <Component id="cxIdProfessor" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="limparProfessor" alignment="3" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                       <EmptySpace pref="53" max="32767" attributes="0"/>
                                       <Group type="103" groupAlignment="3" attributes="0">
@@ -537,6 +552,14 @@
                             </Component>
                             <Component class="javax.swing.JTextField" name="cxIdProfessor">
                             </Component>
+                            <Component class="javax.swing.JButton" name="limparProfessor">
+                              <Properties>
+                                <Property name="text" type="java.lang.String" value="Limpar"/>
+                              </Properties>
+                              <Events>
+                                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="limparProfessorActionPerformed"/>
+                              </Events>
+                            </Component>
                           </SubComponents>
                         </Container>
                       </SubComponents>
@@ -583,6 +606,8 @@
                                                       <Component id="cxTurmaAlunoCons" max="32767" attributes="0"/>
                                                   </Group>
                                               </Group>
+                                              <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
+                                              <Component id="limparAluno" min="-2" max="-2" attributes="0"/>
                                           </Group>
                                           <Group type="102" alignment="0" attributes="0">
                                               <EmptySpace min="-2" pref="65" max="-2" attributes="0"/>
@@ -619,9 +644,12 @@
                                       <EmptySpace type="separate" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="0" attributes="0">
                                           <Component id="jLabel20" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          <Component id="cxIdAlunoCons" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Group type="103" alignment="0" groupAlignment="3" attributes="0">
+                                              <Component id="cxIdAlunoCons" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              <Component id="limparAluno" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          </Group>
                                       </Group>
-                                      <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="3" attributes="0">
                                           <Component id="btConsAluno" alignment="3" min="-2" max="-2" attributes="0"/>
                                           <Component id="btAlterarAluno" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -629,7 +657,7 @@
                                           <Component id="btListarAlunos" alignment="3" min="-2" max="-2" attributes="0"/>
                                           <Component id="btCadAluno" alignment="3" min="-2" max="-2" attributes="0"/>
                                       </Group>
-                                      <EmptySpace pref="89" max="32767" attributes="0"/>
+                                      <EmptySpace pref="90" max="32767" attributes="0"/>
                                   </Group>
                               </Group>
                             </DimensionLayout>
@@ -704,6 +732,14 @@
                               </Properties>
                               <Events>
                                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btCadAlunoActionPerformed"/>
+                              </Events>
+                            </Component>
+                            <Component class="javax.swing.JButton" name="limparAluno">
+                              <Properties>
+                                <Property name="text" type="java.lang.String" value="Limpar"/>
+                              </Properties>
+                              <Events>
+                                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="limparAlunoActionPerformed"/>
                               </Events>
                             </Component>
                           </SubComponents>

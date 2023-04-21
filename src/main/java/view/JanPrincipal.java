@@ -5,8 +5,6 @@
 package view;
 
 import controller.*;
-import java.util.StringTokenizer;
-import java.util.function.Function;
 import javax.swing.JOptionPane;
 import model.*;
 
@@ -57,6 +55,7 @@ public class JanPrincipal extends javax.swing.JFrame {
         btCadDir = new javax.swing.JButton();
         cxIdDir = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
+        limparDir = new javax.swing.JButton();
         jScrollPaneProfessorCons = new javax.swing.JScrollPane();
         jPanelCadDiretor2 = new javax.swing.JPanel();
         jLabel15 = new javax.swing.JLabel();
@@ -73,6 +72,7 @@ public class JanPrincipal extends javax.swing.JFrame {
         brCadProfessor = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         cxIdProfessor = new javax.swing.JTextField();
+        limparProfessor = new javax.swing.JButton();
         jScrollPaneAlunoCons = new javax.swing.JScrollPane();
         jPanelCadDiretor3 = new javax.swing.JPanel();
         jLabel18 = new javax.swing.JLabel();
@@ -87,6 +87,7 @@ public class JanPrincipal extends javax.swing.JFrame {
         jLabel23 = new javax.swing.JLabel();
         cxTurmaAlunoCons = new javax.swing.JTextField();
         btCadAluno = new javax.swing.JButton();
+        limparAluno = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
         Iniciar = new javax.swing.JMenu();
         jMenuAbrir = new javax.swing.JMenu();
@@ -164,6 +165,13 @@ public class JanPrincipal extends javax.swing.JFrame {
 
         jLabel4.setText("ID");
 
+        limparDir.setText("Limpar");
+        limparDir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                limparDirActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanelCadDiretor1Layout = new javax.swing.GroupLayout(jPanelCadDiretor1);
         jPanelCadDiretor1.setLayout(jPanelCadDiretor1Layout);
         jPanelCadDiretor1Layout.setHorizontalGroup(
@@ -183,7 +191,9 @@ public class JanPrincipal extends javax.swing.JFrame {
                         .addGroup(jPanelCadDiretor1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(cxIdDir)
                             .addComponent(cxNomeDir, javax.swing.GroupLayout.DEFAULT_SIZE, 161, Short.MAX_VALUE)
-                            .addComponent(cxCpfDir)))
+                            .addComponent(cxCpfDir))
+                        .addGap(77, 77, 77)
+                        .addComponent(limparDir))
                     .addGroup(jPanelCadDiretor1Layout.createSequentialGroup()
                         .addGap(59, 59, 59)
                         .addComponent(btListarDir)
@@ -213,16 +223,18 @@ public class JanPrincipal extends javax.swing.JFrame {
                             .addComponent(jLabel14)
                             .addComponent(cxCpfDir, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(cxIdDir, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(jPanelCadDiretor1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(cxIdDir, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(limparDir)))
                     .addComponent(jLabel4))
-                .addGap(52, 52, 52)
+                .addGap(51, 51, 51)
                 .addGroup(jPanelCadDiretor1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btListarDir)
                     .addComponent(btConsDir)
                     .addComponent(btAlterarDir)
                     .addComponent(btDeletarDir)
                     .addComponent(btCadDir))
-                .addContainerGap(88, Short.MAX_VALUE))
+                .addContainerGap(89, Short.MAX_VALUE))
         );
 
         jScrollPaneDiretorCons.setViewportView(jPanelCadDiretor1);
@@ -282,6 +294,13 @@ public class JanPrincipal extends javax.swing.JFrame {
 
         jLabel2.setText("ID");
 
+        limparProfessor.setText("Limpar");
+        limparProfessor.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                limparProfessorActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanelCadDiretor2Layout = new javax.swing.GroupLayout(jPanelCadDiretor2);
         jPanelCadDiretor2.setLayout(jPanelCadDiretor2Layout);
         jPanelCadDiretor2Layout.setHorizontalGroup(
@@ -313,7 +332,8 @@ public class JanPrincipal extends javax.swing.JFrame {
                                         .addGroup(jPanelCadDiretor2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                             .addComponent(cxCpfProfessor, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE)
                                             .addComponent(cxIdProfessor, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 218, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(55, 55, 55)
+                                .addComponent(limparProfessor))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelCadDiretor2Layout.createSequentialGroup()
                                 .addComponent(btListarProfessor)
                                 .addGap(18, 18, 18)
@@ -346,7 +366,8 @@ public class JanPrincipal extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(jPanelCadDiretor2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
-                    .addComponent(cxIdProfessor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(cxIdProfessor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(limparProfessor))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 53, Short.MAX_VALUE)
                 .addGroup(jPanelCadDiretor2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(brCadProfessor)
@@ -406,6 +427,13 @@ public class JanPrincipal extends javax.swing.JFrame {
             }
         });
 
+        limparAluno.setText("Limpar");
+        limparAluno.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                limparAlunoActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanelCadDiretor3Layout = new javax.swing.GroupLayout(jPanelCadDiretor3);
         jPanelCadDiretor3.setLayout(jPanelCadDiretor3Layout);
         jPanelCadDiretor3Layout.setHorizontalGroup(
@@ -429,7 +457,9 @@ public class JanPrincipal extends javax.swing.JFrame {
                             .addGroup(jPanelCadDiretor3Layout.createSequentialGroup()
                                 .addComponent(jLabel23)
                                 .addGap(27, 27, 27)
-                                .addComponent(cxTurmaAlunoCons))))
+                                .addComponent(cxTurmaAlunoCons)))
+                        .addGap(40, 40, 40)
+                        .addComponent(limparAluno))
                     .addGroup(jPanelCadDiretor3Layout.createSequentialGroup()
                         .addGap(65, 65, 65)
                         .addComponent(btListarAlunos)
@@ -459,15 +489,17 @@ public class JanPrincipal extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(jPanelCadDiretor3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel20)
-                    .addComponent(cxIdAlunoCons, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(36, 36, 36)
+                    .addGroup(jPanelCadDiretor3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(cxIdAlunoCons, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(limparAluno)))
+                .addGap(35, 35, 35)
                 .addGroup(jPanelCadDiretor3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btConsAluno)
                     .addComponent(btAlterarAluno)
                     .addComponent(btDeletarAluno)
                     .addComponent(btListarAlunos)
                     .addComponent(btCadAluno))
-                .addContainerGap(89, Short.MAX_VALUE))
+                .addContainerGap(90, Short.MAX_VALUE))
         );
 
         jScrollPaneAlunoCons.setViewportView(jPanelCadDiretor3);
@@ -573,7 +605,7 @@ public class JanPrincipal extends javax.swing.JFrame {
             cxNomeDir.setText(diretor.getNome());
             cxCpfDir.setText(diretor.getCpf().toString());
         } else {
-            JOptionPane.showMessageDialog(null, "Não Encontrado", "ERROR", 0);
+            mensagemTela(false, "Error");
             limparConsDiretor();
         }
     }//GEN-LAST:event_btConsDirActionPerformed
@@ -581,50 +613,41 @@ public class JanPrincipal extends javax.swing.JFrame {
     private void btAlterarDirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btAlterarDirActionPerformed
         verificacaoListaDiretor();
         CD.setPessoa(new Diretor(Integer.parseInt(cxIdDir.getText()), cxNomeDir.getText(), Integer.parseInt(cxCpfDir.getText())));
-        if (CD.updatePessoa() == 1) {
-            JOptionPane.showMessageDialog(null, "Atualizado", "Atualizacao", 1);
-        } else {
-            JOptionPane.showMessageDialog(null, "Error", "Atualizacao", 0);
-        }
+        mensagemTela((CD.updatePessoa() == 1), "Atualizado!");
     }//GEN-LAST:event_btAlterarDirActionPerformed
 
     private void btDeletarDirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btDeletarDirActionPerformed
         verificacaoListaDiretor();
         CD.setPessoa(new Diretor(Integer.parseInt(cxIdDir.getText())));
-        if (CD.deletePessoa()) {
-            JOptionPane.showMessageDialog(null, "Deletado", "Deletar", 1);
-            limparConsDiretor();
-        } else {
-            JOptionPane.showMessageDialog(null, "ERROR", "Deletar", 0);
-        }
+        mensagemTela(CD.deletePessoa(), "Deletado!");
     }//GEN-LAST:event_btDeletarDirActionPerformed
 
     private void btListarDirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btListarDirActionPerformed
         verificacaoListaDiretor();
-        JOptionPane.showMessageDialog(null, CD.getLista(), "Lista de Diretores", JOptionPane.INFORMATION_MESSAGE);
+        mensagemTela(true, CD.getLista().toString());
     }//GEN-LAST:event_btListarDirActionPerformed
 
     private void btCadDirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btCadDirActionPerformed
         verificacaoListaDiretor();
         if (cxNomeDir.getText().isEmpty()) {
-            JOptionPane.showMessageDialog(null, "ERROR", "ERROR", 0);
+            mensagemTela(false, "Error");
         } else {
             CD.setPessoa(new Diretor(cxNomeDir.getText(), Integer.parseInt(cxCpfDir.getText())));
             CD.gravarPessoa();
-            JOptionPane.showMessageDialog(null, "Cadastrado!", "Cadastro", 1);
+            mensagemTela(true, "Cadastrado!");
         }
     }//GEN-LAST:event_btCadDirActionPerformed
 
     private void btConsProfessorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btConsProfessorActionPerformed
-        verificacaoListaProfessor();        
+        verificacaoListaProfessor();
         CP.setPessoa(new Professor(Integer.parseInt(cxIdProfessor.getText())));
         Professor pessoa = CP.consPessoa();
-        if ( pessoa != null) {
+        if (pessoa != null) {
             cxNomeProfessor.setText(pessoa.getNome());
             cxDisciplinaProfessor.setText(pessoa.getDisciplina());
             cxCpfProfessor.setText(pessoa.getCpf().toString());
         } else {
-            JOptionPane.showMessageDialog(null, "Não Encontrado", "ERROR", 0);
+            mensagemTela(false, "Error");
             limparConsAluno();
         }
     }//GEN-LAST:event_btConsProfessorActionPerformed
@@ -636,37 +659,28 @@ public class JanPrincipal extends javax.swing.JFrame {
     private void btAlterarProfessorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btAlterarProfessorActionPerformed
         verificacaoListaProfessor();
         CP.setPessoa(new Professor(Integer.parseInt(cxIdProfessor.getText()), cxNomeProfessor.getText(), cxDisciplinaProfessor.getText(), Integer.parseInt(cxCpfProfessor.getText())));
-        if (CP.updatePessoa() == 1) {
-            JOptionPane.showMessageDialog(null, "Atualizado", "Atualizacao", 1);
-        } else {
-            JOptionPane.showMessageDialog(null, "Error", "Atualizacao", 0);
-        }
+        mensagemTela((CP.updatePessoa() == 1), "Atualizado!");
     }//GEN-LAST:event_btAlterarProfessorActionPerformed
 
     private void btDeletarProfessorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btDeletarProfessorActionPerformed
         verificacaoListaProfessor();
         CP.setPessoa(new Professor(Integer.parseInt(cxIdProfessor.getText())));
-        if (CP.deletePessoa()) {
-            JOptionPane.showMessageDialog(null, "Deletado", "Deletar", 1);
-            limparConsProfessor();
-        } else {
-            JOptionPane.showMessageDialog(null, "ERROR", "Deletar", 0);
-        }
+        mensagemTela(CP.deletePessoa(), "Deletado!");
     }//GEN-LAST:event_btDeletarProfessorActionPerformed
 
     private void btListarProfessorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btListarProfessorActionPerformed
         verificacaoListaProfessor();
-        JOptionPane.showMessageDialog(null, CP.getLista(), "Lista de Professores", JOptionPane.INFORMATION_MESSAGE);
+        mensagemTela(true, CP.getLista().toString());
     }//GEN-LAST:event_btListarProfessorActionPerformed
 
     private void brCadProfessorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_brCadProfessorActionPerformed
         verificacaoListaProfessor();
         if (cxNomeProfessor.getText().isEmpty()) {
-            JOptionPane.showMessageDialog(null, "ERROR", "ERROR", 0);
+            mensagemTela(false, "Error: Sem nome.");
         } else {
             CP.setPessoa(new Professor(cxNomeProfessor.getText(), cxDisciplinaProfessor.getText(), Integer.parseInt(cxCpfProfessor.getText())));
             CP.gravarPessoa();
-            JOptionPane.showMessageDialog(null, "Cadastrado!", "Cadastro", 1);
+            mensagemTela(true, "Cadastrado!");
         }
     }//GEN-LAST:event_brCadProfessorActionPerformed
 
@@ -678,50 +692,62 @@ public class JanPrincipal extends javax.swing.JFrame {
         if (aluno != null) {
             cxNomeAlunoCons.setText(aluno.getNome());
             cxTurmaAlunoCons.setText(aluno.getTurma());
+            mensagemTela(true, "Aluno encontrado!");
         } else {
-            JOptionPane.showMessageDialog(null, "Não Encontrado", "ERROR", 0);
+            mensagemTela(false, "Error");
             limparConsAluno();
         }
     }//GEN-LAST:event_btConsAlunoActionPerformed
 
     private void btAlterarAlunoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btAlterarAlunoActionPerformed
         verificacaoListaAluno();
-
         controllerAluno.setPessoa(new Aluno(Integer.parseInt(cxIdAlunoCons.getText()), cxNomeAlunoCons.getText(), cxTurmaAlunoCons.getText()));
-        if (controllerAluno.updatePessoa() == 1) {
-            JOptionPane.showMessageDialog(null, "Atualizado", "Atualizacao", 1);
-        } else {
-            JOptionPane.showMessageDialog(null, "Error", "Atualizacao", 0);
-        }
+        mensagemTela((controllerAluno.updatePessoa() == 1), "Atualizado");
+        
     }//GEN-LAST:event_btAlterarAlunoActionPerformed
 
     private void btDeletarAlunoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btDeletarAlunoActionPerformed
         verificacaoListaAluno();
-        controllerAluno.setPessoa(new Aluno(Integer.parseInt(cxIdAlunoCons.getText())));
-        if (controllerAluno.deletePessoa()) {
-            JOptionPane.showMessageDialog(null, "Deletado", "Deletar", 1);
-            limparConsAluno();
-        } else {
-            JOptionPane.showMessageDialog(null, "ERROR", "Deletar", 0);
-        }
+        controllerAluno.setPessoa(new Aluno(Integer.parseInt(cxIdAlunoCons.getText())));        
+        mensagemTela(controllerAluno.deletePessoa(), "Deletado" );
+        limparConsAluno();
     }//GEN-LAST:event_btDeletarAlunoActionPerformed
 
     private void btListarAlunosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btListarAlunosActionPerformed
         verificacaoListaAluno();
-        JOptionPane.showMessageDialog(null, controllerAluno.getLista(), "Lista de Alunos", JOptionPane.INFORMATION_MESSAGE);
+        mensagemTela(true, controllerAluno.getLista().toString());
     }//GEN-LAST:event_btListarAlunosActionPerformed
 
     private void btCadAlunoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btCadAlunoActionPerformed
         verificacaoListaAluno();
         if (cxNomeAlunoCons.getText().isEmpty()) {
-            JOptionPane.showMessageDialog(null, "ERROR", "ERROR", 0);
+            mensagemTela(false, "ERROR");
         } else {
             controllerAluno.setPessoa(new Aluno(cxNomeAlunoCons.getText(), cxTurmaAlunoCons.getText()));
             controllerAluno.gravarPessoa();
-            JOptionPane.showMessageDialog(null, "Cadastrado!", "Cadastro", 1);
-
+            mensagemTela(true, "Cadastrado!");
         }
     }//GEN-LAST:event_btCadAlunoActionPerformed
+
+    private void limparDirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_limparDirActionPerformed
+        limparConsDiretor();
+    }//GEN-LAST:event_limparDirActionPerformed
+
+    private void limparProfessorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_limparProfessorActionPerformed
+        limparConsProfessor();
+    }//GEN-LAST:event_limparProfessorActionPerformed
+
+    private void limparAlunoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_limparAlunoActionPerformed
+        limparConsAluno();
+    }//GEN-LAST:event_limparAlunoActionPerformed
+
+    public void mensagemTela(boolean confirmacao, String mensagem) {
+        if (confirmacao) {
+            JOptionPane.showMessageDialog(null, mensagem, "Confirmacao", 1);
+        } else {
+            JOptionPane.showMessageDialog(null, "Error", "ERROR", 0);
+        }
+    }
 
     public void verificacaoListaAluno() {
         if (controllerAluno.getArquivo() == null) {
@@ -857,5 +883,8 @@ public class JanPrincipal extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPaneProfessorCons;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTabbedPane jTabbedPane2;
+    private javax.swing.JButton limparAluno;
+    private javax.swing.JButton limparDir;
+    private javax.swing.JButton limparProfessor;
     // End of variables declaration//GEN-END:variables
 }
